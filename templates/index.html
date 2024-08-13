@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мы — IT-компания, специализирующаяся на разработке программного обеспечения, веб-решений и мобильных приложений. Наша миссия — делать сложные задачи простыми, предоставляя клиентам инструменты для достижения их целей.">
+    <meta name="keywords" content="IT Компания, Айти компания, IT, Разработка сайтов, Разработка мобильных приложений">
+    <meta name="author" content="WorkBench">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workbench - Инновационные решения для вашего бизнеса.</title>
+
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">  
+
+  </head>
+  <body>
+
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
+
+
+    <!-- ==================== Start mobile menu ================= -->
+
+    <div class="zq_mobile_menu">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" style="height: 65px;"  alt="">
+        </div>
+        <div class="close-menu cursor-pointer ti-close"><i class="fa-sharp fa-light fa-xmark"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="menu-text">
+                        <div class="text">
+                            <h2>Меню</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="menu-navbar">
+                        <ul class="main-menu">
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:index' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Главная">Главная</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:about' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="О нас">О нас</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:portfolio' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Портфолио">Портфолио</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'blog:blog-list' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Блог">Блог</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:contacts' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Контакты">Контакты</span></a>
+                                </div>
+                            </li>
+                            <hr>
+                            {% if user.is_authenticated %}
+
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:profile' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Профиль">Профиль</span></a>
+                                    </div>
+                                </li>
+
+                            {% else %}
+
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:login' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Войти">Войти</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:register' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Регистрация">Регистрация</span></a>
+                                    </div>
+                                </li>
+
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="cont-info">
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Адрес</h6>
+                            <h5>Казахстан, <br> г.Алматы | г.Астана</h5>
+                        </div>
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Социальные сети</h6>
+                            <ul class="social">
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item mb-40">
+                            <h6 class="sub-title mb-15">Связаться с нами</h6>
+                            <h5><a href="#">info@workbench.kz</a></h5>
+                            <h5 class="underline mt-10"><a href="tel:+704-555-0127">+7 (707) 777 2817</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- ==================== End Navbar ==================== -->
+
+    <div class="has-smooth" id="has_smooth"></div>
+    
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <div class="body-wrapper pt-30">
+                <!-- Start Header area -->
+                <header class="zq_header-area">
+                    <div class="container container-custom-1">
+                        <div class="row align-items-center">
+                            <div class="col-xxl-9 col-lg-8 col-sm-6 col-8">
+                                <div class="zq_header-left">
+                                    <div class="zq_header-logo">
+                                        <a href="{% url 'app:index' %}"><img src="{% static 'images/logo.png' %}" style="height: 66px; width: 80px;" alt=""></a>
+                                    </div>
+                                    <div class="zq_header-menu">
+                                      <nav id="mobile-menu">
+                                          <ul>
+                                              <li class="menu-has-child">
+                                                  <a href="{% url 'app:index' %}">Главная</a>
+                                              </li>
+                                              <li class="menu-has-child">
+                                                  <a href="{% url 'app:about' %}">О нас</a>
+                                              </li>
+                                              <li class="menu-has-child">
+                                                  <a href="{% url 'app:portfolio' %}">Портфолио</a>
+                                              </li>
+                                              <li class="menu-has-child">
+                                                  <a href="{% url 'blog:blog-list' %}">Блог</a>
+                                              </li>
+                                              <li>
+                                                  <a href="{% url 'app:contacts' %}">Контакты</a>
+                                              </li>
+                                          </ul>
+                                      </nav>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6 col-4 d-flex justify-content-end">
+                                <div class="zq_header-right">
+
+                                    {% if user.is_authenticated %}
+                                        {% if user.photo %}
+                                            <div class="zq_h2_header-action">
+                                                <a href="{% url 'users:profile' %}">
+                                                    <img src="{{ user.photo.url }}" style="height: 37px; width: 37px; border-radius: 50%; border: white 1px solid;">
+                                                    <span class="zq_h5_header_icon zq_menuIcon d-lg-none"></span>
+                                                </a>
+                                            </div>
+                                        {% else %}
+                                            <div class="zq_h2_header-action">
+                                                <a href="{% url 'users:profile' %}">
+                                                    <img src="{% static 'images/blog_big-3.png' %}" style="height: 37px; width: 37px; border-radius: 50%; border: white 1px solid;">
+                                                    <span class="zq_h5_header_icon zq_menuIcon d-lg-none"></span>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    {% else %}
+                                    <a href="{% url 'users:login' %}" class="zq_header-btn"><b>Войти</b>
+                                        <svg width="11" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.57971 10.1668L9.55073 1.8335M9.55073 1.8335H2.37681M9.55073 1.8335V9.33349" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </a>
+                                    {% endif %}
+
+                                    <span class="zq_header-menuIcon zq_menuIcon"><i class="fa-light fa-grid-2"></i></span>
+                                    <span class="zq_header-action-shape">
+                                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-11 h-11">
+                                            <path d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z" fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- end Header area -->
+                <main>
+                    <!-- hero area start -->
+                    <section class="zq_hero-area">
+                        <div class="container container-custom-1">
+                            <div class="zq_hero-container">
+                                <div class="zq_hero-wrap">
+                                    <div class="zq_hero-content">
+                                        <h1 class="zq_hero-content-title">
+                                            Зона <span>IT</span> Решений
+                                        </h1>
+                                        <p>Наша команда — это коллектив экспертов, страстно увлеченных технологиями и инновациями. Мы разрабатываем современные IT-решения, которые помогают бизнесу расти, повышать эффективность и достигать новых высот.</p>
+                                    </div>
+                                    <div class="zq_hero-img">
+                                        <img src="{% static 'images/team.png' %}" style="border-radius: 25px;" alt="">
+                                    </div>
+                                    <div class="zq_hero-circle-btn">
+                                        <img src="{% static 'images/h1_circle.png' %}" alt="">
+                                        <a href="#">
+                                            <svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_129_42)">
+                                                <path d="M13.8922 10.568C17.1308 7.32937 20.2842 4.17596 23.4376 1.02255C24.1195 0.34073 24.8013 -0.170634 25.824 0.0850478C27.6138 0.425957 28.2956 2.55664 27.0172 3.92028C25.3979 5.62482 23.7786 7.15891 22.1592 8.77823C20.0286 10.9089 17.9831 13.0396 15.8524 15.085C14.4888 16.4487 13.3808 16.4487 12.0172 15.085C8.35242 11.4203 4.60242 7.7555 0.937644 4.0055C-0.17031 2.89755 -0.255538 1.53391 0.76719 0.596411C1.78992 -0.341089 3.06833 -0.341089 4.17628 0.852093C7.07401 3.83505 10.057 6.818 13.0399 9.80096C13.2104 10.0566 13.5513 10.2271 13.8922 10.568Z" fill="currentColor"></path>
+                                                <path d="M13.7217 24.5454C16.9603 21.3068 20.0285 18.2386 23.0115 15.1704C23.3524 14.8295 23.608 14.5738 23.949 14.3181C24.8865 13.6363 26.0796 13.7215 26.8467 14.5738C27.699 15.4261 27.7842 16.534 27.1024 17.4715C26.9319 17.7272 26.6762 17.9829 26.4205 18.1534C22.841 21.7329 19.2615 25.3124 15.7671 28.8068C14.3183 30.2556 13.2103 30.2556 11.7615 28.8068C8.18191 25.2272 4.51714 21.5624 0.937591 17.9829C0.255773 17.3011 -0.255591 16.534 0.0853179 15.5113C0.596682 13.7215 2.64214 13.2954 4.00577 14.659C6.98873 17.5568 9.88645 20.5397 12.8694 23.5227C13.2103 23.7784 13.3808 24.1193 13.7217 24.5454Z" fill="currentColor"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- hero area end -->
+
+                    <!-- brand area start -->
+                    <div class="zq_brand-area pt-95 pb-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="zq_section-area mb-45 text-center">
+                                        <span class="zq_section-subtitle">С нами сотрудничают</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper h1_brand-active">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/kaspi.png' %}" style="border-radius: 7px;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/halyk.png' %}" style="border-radius: 7px;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/freedom.jpg' %}" style="border-radius: 7px; height: 100%;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/astana.png' %}" style="border-radius: 7px; height: 95%;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/amway.jpg' %}" style="border-radius: 7px; height: 95%;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/epam.png'  %}" style="border-radius: 7px;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- brand area end -->
+
+                    <!-- faq area start -->
+                    <div class="zq_faq-area pb-60">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="zq_faq-img mb-40">
+                                        <img src="{% static 'images/1_1.png' %}" alt="" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="zq_faq-wrapper ml-50 mr-30 mb-40">
+                                        <div class="zq_section-area">
+                                            <span class="zq_section-subtitle mb-20">повседневные операции</span>
+                                            <h2 class="zq_section-title mb-35">Как все происходит?</h2>
+                                        </div>
+                                        <div class="zq_faq-content">
+                                            <div class="accordion" id="accordionExample">
+                                                <div class="accordion-item mb-20">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                            <span>01.</span> Клиент связывается с нами
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>Привет! Сейчас мы расскажем тебе как проходит операция по анализу и разработки проекта! </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item mb-20">
+                                                    <h2 class="accordion-header" id="headingTwo">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <span>02.</span> Полное погружение в идею клиента
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>После того как клиент связался с нами, мы полностью анализируем его проект и подводим итоги.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item mb-20">
+                                                    <h2 class="accordion-header" id="headingThree">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                            <span>03.</span> Разаботка ТЗ
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>С анализом который мы провели на прошлом шагу, мы расписываем все в ТЗ и показываем клиенту.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingFour">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                            <span>04.</span> Работа над проектом клиента
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>В случае если клиент согласен мы приступаем к разработке его проекта!</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- faq area end -->
+
+                    <!-- project area start -->
+                    <section class="zq_project-area">
+                        <div class="zq_common_width">
+                            <div class="zq_common_width_inner pt-100 pb-100">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-5 col-lg-6">
+                                            <div class="zq_section-area text-center">
+                                                <span class="zq_section-subtitle mb-20">Наши проекты</span>
+                                                <h2 class="zq_section-title mb-40">Разработаем невозможное!</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zq_project-wrapper">
+                                        <div class="zq_project-single pr-40">
+                                            <div class="zq_project-item">
+                                                <div class="zq_project-img">
+                                                    <a href="{% url 'app:portfolio' %}"><img src="{% static 'images/bonapart.png' %}" alt=""></a>
+                                                </div>
+                                                <div class="zq_project-content">
+                                                    <div class="zq_project-content-head">
+                                                        <h3 class="zq_project-content-title"><a href="{% url 'app:portfolio' %}">BonApart - Аренда жилья.</a></h3>
+                                                        <a href="{% url 'app:portfolio' %}" class="zq_project-content-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                    <p>Платформа для аренды жилья посуточно.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="zq_project-item">
+                                                <div class="zq_project-img">
+                                                    <a href="{% url 'app:portfolio' %}"><img src="{% static 'images/izdey.png' %}" alt=""></a>
+                                                </div>
+                                                <div class="zq_project-content">
+                                                    <div class="zq_project-content-head">
+                                                        <h3 class="zq_project-content-title"><a href="{% url 'app:portfolio' %}">Izdey.kz - Найти работу.</a></h3>
+                                                        <a href="{% url 'app:portfolio' %}" class="zq_project-content-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                    <p>Платформа для поиска работы на короткий срок.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="zq_project-single pl-40">
+                                            <div class="zq_project-client">
+                                                <div class="zq_project-client-img">
+                                                    <img src="{% static 'images/p1.png' %}" alt="">
+                                                    <img src="{% static 'images/p2.png' %}" alt="">
+                                                    <img src="{% static 'images/p3.png' %}" alt="">
+                                                </div>
+                                                <div class="zq_project-client-info">
+                                                    <h3>Более 300+</h3>
+                                                    <p>Доверенные клиенты</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="zq_project-btn text-center pt-20">
+                                        <a href="{% url 'app:portfolio' %}" class="zq_theme-btn">Больше проектов</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- project area end -->
+
+                    <!-- choose area start -->
+                    <section class="zq_choose-area pt-95 pb-70">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-end">
+                                <div class="col-lg-6 col-md-8">
+                                    <div class="zq_section-area">
+                                        <span class="zq_section-subtitle mb-20">Почему мы?</span>
+                                        <h2 class="zq_section-title mb-30">Наша история</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zq_choose-wrapper">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-7">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="zq_choose-item mb-30">
+                                                    <div class="zq_choose-item-top">
+                                                        <div class="zq_choose-item-icon">
+                                                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_199_104)">
+                                                                <path d="M3.23684 29.5605C3.45263 28.7912 3.56053 27.5824 3.88421 26.3737C4.1 25.6044 3.88421 25.055 3.34474 24.6154C2.58947 24.066 1.94211 23.4066 1.29474 22.7473C-0.431579 20.989 -0.431579 19.011 1.29474 17.1429C1.94211 16.4835 2.69737 15.8242 3.45263 15.1649C3.99211 14.7253 4.20789 14.1758 3.99211 13.4066C3.77632 12.5275 3.56053 11.6484 3.45263 10.7693C3.02105 8.1319 4.20789 6.48354 7.01316 6.15387C7.76842 6.04398 8.41579 6.04398 9.17105 5.93409C9.92632 5.93409 10.4658 5.60442 10.7895 4.7253C11.1132 3.84618 11.5447 2.85717 11.9763 2.08794C13.1632 -0.109863 14.8895 -0.659314 17.0474 0.439587C17.6947 0.769258 18.3421 1.09893 18.8816 1.53849C19.9605 2.41761 20.9316 2.41761 22.0105 1.53849C22.4421 1.20882 22.8737 0.989038 23.3053 0.769258C26.0026 -0.659314 28.0526 2.67178e-05 29.2395 2.85717C29.5632 3.51651 29.8868 4.28574 30.1026 5.05497C30.3184 5.71431 30.8579 6.04398 31.5053 6.04398C32.3684 6.04398 33.1237 6.15387 33.9868 6.26376C36.9 6.81321 38.0868 8.46157 37.4395 11.4286C37.3316 12.1978 37.1158 12.8572 36.9 13.6264C36.6842 14.2857 36.9 14.8352 37.4395 15.1649C38.0868 15.7143 38.8421 16.2638 39.4895 16.9231C41.4316 18.7912 41.4316 20.8791 39.5974 22.8572C39.0579 23.4066 38.4105 23.9561 37.7632 24.5055C37.0079 25.055 36.7921 25.7143 37.1158 26.5934C37.3316 27.2528 37.4395 27.9121 37.5474 28.4616C38.1947 31.6484 36.7921 33.5165 33.6632 33.7363C33.0158 33.7363 32.2605 33.8462 31.6132 33.9561C30.9658 33.9561 30.5342 34.2857 30.3184 34.9451C29.9947 35.7143 29.6711 36.3736 29.4553 37.1429C28.1605 40.1099 26.1105 40.7693 23.4132 39.1209C22.7658 38.7912 22.2263 38.3517 21.5789 38.022C20.9316 37.5824 20.3921 37.5824 19.7447 38.022C18.9895 38.5714 18.1263 39.011 17.3711 39.4506C15.2132 40.5495 13.3789 40 12.1921 37.8022C11.7605 36.9231 11.4368 36.044 11.0053 35.1649C10.6816 34.2857 10.1421 34.066 9.27895 33.9561C8.30789 33.8462 7.22895 33.8462 6.25789 33.6264C4.31579 33.2967 3.23684 31.8682 3.23684 29.5605ZM6.58158 9.78025C6.90526 10.989 7.12105 12.0879 7.33684 13.0769C7.76842 14.8352 7.33684 16.3737 5.93421 17.5824C5.17895 18.2418 4.53158 18.7912 3.88421 19.4506C3.45263 19.7802 3.45263 20.1099 3.88421 20.4396C4.63947 21.0989 5.39474 21.7583 6.15 22.5275C7.33684 23.6264 7.66053 25.055 7.33684 26.7033C7.12105 27.5824 7.01316 28.5715 6.68947 29.4506C6.47368 30.1099 6.79737 30.3297 7.44474 30.3297C8.2 30.3297 8.84737 30.4396 9.60263 30.5495C11.0053 30.6594 12.4079 30.989 13.1632 32.3077C13.5947 32.9671 13.9184 33.7363 14.2421 34.5055C14.5658 35.1649 14.8895 35.8242 15.2132 36.5934C16.2921 35.9341 17.1553 35.3846 18.1263 34.8352C19.7447 33.8462 21.3632 33.8462 22.8737 34.8352C23.6289 35.2747 24.4921 35.7143 25.2474 36.2638C25.6789 36.4835 25.8947 36.4835 26.1105 35.9341C26.3263 35.2747 26.65 34.6154 26.8658 33.9561C27.7289 31.6484 29.2395 30.5495 31.6132 30.4396C32.4763 30.4396 33.3395 30.2198 34.4184 30.1099C34.2026 28.9011 33.8789 27.9121 33.6632 26.8132C33.2316 24.9451 33.6632 23.4066 35.0658 22.1978C35.7132 21.6484 36.3605 20.989 37.0079 20.4396C37.4395 20 37.4395 19.6704 37.0079 19.3407C36.3605 18.7912 35.6053 18.1319 34.9579 17.5824C33.6632 16.3737 33.2316 14.9451 33.5553 13.1868C33.6632 12.4176 33.8789 11.6484 34.0947 10.7693C34.3105 9.78025 34.2026 9.67036 33.2316 9.56047C32.4763 9.45058 31.6132 9.45058 30.8579 9.34069C29.1316 9.12091 27.9447 8.35167 27.1895 6.70332C26.8658 6.04398 26.5421 5.27475 26.2184 4.50552C26.0026 4.06596 25.7868 3.73629 25.5711 3.29673C24.7079 3.84618 23.8447 4.28574 23.0895 4.83519C21.2553 6.04398 19.4211 6.04398 17.5868 4.83519C17.0474 4.50552 16.5079 4.06596 15.8605 3.73629C15.6447 3.6264 15.3211 3.51651 14.8895 3.29673C14.4579 4.28574 14.1342 5.16486 13.7026 6.04398C12.8395 8.13189 11.3289 9.2308 9.06316 9.34069C8.41579 9.45058 7.55263 9.67036 6.58158 9.78025Z" fill="currentColor"></path>
+                                                                <path d="M18.1263 22.967C19.7447 20.989 21.3632 19.0109 22.9816 17.0329C23.8447 16.0439 24.6 14.945 25.4632 13.956C26.2184 13.0769 27.1895 12.8571 27.9447 13.5164C28.7 14.1758 28.8079 15.1648 28.0526 16.1538C25.2474 19.5604 22.4421 23.0769 19.6368 26.4835C18.7737 27.4725 17.8026 27.5824 16.8316 26.5933C15.429 25.1648 14.0263 23.7362 12.6237 22.3076C11.7605 21.4285 11.7605 20.4395 12.5158 19.6703C13.2711 19.0109 14.2421 19.0109 15.1053 19.8901C16.0763 20.8791 17.0474 21.8681 18.1263 22.967Z" fill="currentColor"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <a href="#" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                    <h2 class="zq_choose-item-title">300+</h2>
+                                                    <p>Наше портфолио насчитывает более 300 успешных проектов в различных отраслях, что подтверждает нашу надежность и опыт в IT-индустрии.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="zq_choose-item mb-30">
+                                                    <div class="zq_choose-item-top">
+                                                        <div class="zq_choose-item-icon">
+                                                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_199_104)">
+                                                                <path d="M3.23684 29.5605C3.45263 28.7912 3.56053 27.5824 3.88421 26.3737C4.1 25.6044 3.88421 25.055 3.34474 24.6154C2.58947 24.066 1.94211 23.4066 1.29474 22.7473C-0.431579 20.989 -0.431579 19.011 1.29474 17.1429C1.94211 16.4835 2.69737 15.8242 3.45263 15.1649C3.99211 14.7253 4.20789 14.1758 3.99211 13.4066C3.77632 12.5275 3.56053 11.6484 3.45263 10.7693C3.02105 8.1319 4.20789 6.48354 7.01316 6.15387C7.76842 6.04398 8.41579 6.04398 9.17105 5.93409C9.92632 5.93409 10.4658 5.60442 10.7895 4.7253C11.1132 3.84618 11.5447 2.85717 11.9763 2.08794C13.1632 -0.109863 14.8895 -0.659314 17.0474 0.439587C17.6947 0.769258 18.3421 1.09893 18.8816 1.53849C19.9605 2.41761 20.9316 2.41761 22.0105 1.53849C22.4421 1.20882 22.8737 0.989038 23.3053 0.769258C26.0026 -0.659314 28.0526 2.67178e-05 29.2395 2.85717C29.5632 3.51651 29.8868 4.28574 30.1026 5.05497C30.3184 5.71431 30.8579 6.04398 31.5053 6.04398C32.3684 6.04398 33.1237 6.15387 33.9868 6.26376C36.9 6.81321 38.0868 8.46157 37.4395 11.4286C37.3316 12.1978 37.1158 12.8572 36.9 13.6264C36.6842 14.2857 36.9 14.8352 37.4395 15.1649C38.0868 15.7143 38.8421 16.2638 39.4895 16.9231C41.4316 18.7912 41.4316 20.8791 39.5974 22.8572C39.0579 23.4066 38.4105 23.9561 37.7632 24.5055C37.0079 25.055 36.7921 25.7143 37.1158 26.5934C37.3316 27.2528 37.4395 27.9121 37.5474 28.4616C38.1947 31.6484 36.7921 33.5165 33.6632 33.7363C33.0158 33.7363 32.2605 33.8462 31.6132 33.9561C30.9658 33.9561 30.5342 34.2857 30.3184 34.9451C29.9947 35.7143 29.6711 36.3736 29.4553 37.1429C28.1605 40.1099 26.1105 40.7693 23.4132 39.1209C22.7658 38.7912 22.2263 38.3517 21.5789 38.022C20.9316 37.5824 20.3921 37.5824 19.7447 38.022C18.9895 38.5714 18.1263 39.011 17.3711 39.4506C15.2132 40.5495 13.3789 40 12.1921 37.8022C11.7605 36.9231 11.4368 36.044 11.0053 35.1649C10.6816 34.2857 10.1421 34.066 9.27895 33.9561C8.30789 33.8462 7.22895 33.8462 6.25789 33.6264C4.31579 33.2967 3.23684 31.8682 3.23684 29.5605ZM6.58158 9.78025C6.90526 10.989 7.12105 12.0879 7.33684 13.0769C7.76842 14.8352 7.33684 16.3737 5.93421 17.5824C5.17895 18.2418 4.53158 18.7912 3.88421 19.4506C3.45263 19.7802 3.45263 20.1099 3.88421 20.4396C4.63947 21.0989 5.39474 21.7583 6.15 22.5275C7.33684 23.6264 7.66053 25.055 7.33684 26.7033C7.12105 27.5824 7.01316 28.5715 6.68947 29.4506C6.47368 30.1099 6.79737 30.3297 7.44474 30.3297C8.2 30.3297 8.84737 30.4396 9.60263 30.5495C11.0053 30.6594 12.4079 30.989 13.1632 32.3077C13.5947 32.9671 13.9184 33.7363 14.2421 34.5055C14.5658 35.1649 14.8895 35.8242 15.2132 36.5934C16.2921 35.9341 17.1553 35.3846 18.1263 34.8352C19.7447 33.8462 21.3632 33.8462 22.8737 34.8352C23.6289 35.2747 24.4921 35.7143 25.2474 36.2638C25.6789 36.4835 25.8947 36.4835 26.1105 35.9341C26.3263 35.2747 26.65 34.6154 26.8658 33.9561C27.7289 31.6484 29.2395 30.5495 31.6132 30.4396C32.4763 30.4396 33.3395 30.2198 34.4184 30.1099C34.2026 28.9011 33.8789 27.9121 33.6632 26.8132C33.2316 24.9451 33.6632 23.4066 35.0658 22.1978C35.7132 21.6484 36.3605 20.989 37.0079 20.4396C37.4395 20 37.4395 19.6704 37.0079 19.3407C36.3605 18.7912 35.6053 18.1319 34.9579 17.5824C33.6632 16.3737 33.2316 14.9451 33.5553 13.1868C33.6632 12.4176 33.8789 11.6484 34.0947 10.7693C34.3105 9.78025 34.2026 9.67036 33.2316 9.56047C32.4763 9.45058 31.6132 9.45058 30.8579 9.34069C29.1316 9.12091 27.9447 8.35167 27.1895 6.70332C26.8658 6.04398 26.5421 5.27475 26.2184 4.50552C26.0026 4.06596 25.7868 3.73629 25.5711 3.29673C24.7079 3.84618 23.8447 4.28574 23.0895 4.83519C21.2553 6.04398 19.4211 6.04398 17.5868 4.83519C17.0474 4.50552 16.5079 4.06596 15.8605 3.73629C15.6447 3.6264 15.3211 3.51651 14.8895 3.29673C14.4579 4.28574 14.1342 5.16486 13.7026 6.04398C12.8395 8.13189 11.3289 9.2308 9.06316 9.34069C8.41579 9.45058 7.55263 9.67036 6.58158 9.78025Z" fill="currentColor"></path>
+                                                                <path d="M18.1263 22.967C19.7447 20.989 21.3632 19.0109 22.9816 17.0329C23.8447 16.0439 24.6 14.945 25.4632 13.956C26.2184 13.0769 27.1895 12.8571 27.9447 13.5164C28.7 14.1758 28.8079 15.1648 28.0526 16.1538C25.2474 19.5604 22.4421 23.0769 19.6368 26.4835C18.7737 27.4725 17.8026 27.5824 16.8316 26.5933C15.429 25.1648 14.0263 23.7362 12.6237 22.3076C11.7605 21.4285 11.7605 20.4395 12.5158 19.6703C13.2711 19.0109 14.2421 19.0109 15.1053 19.8901C16.0763 20.8791 17.0474 21.8681 18.1263 22.967Z" fill="currentColor"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <a href="#" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                    <h2 class="zq_choose-item-title">10+ лет</h2>
+                                                    <p>Мы уже более 10 лет помогаем бизнесам расти и развиваться, предлагая современные IT-решения, которые действительно работают.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="zq_choose-item mb-30">
+                                                    <div class="zq_choose-item-top">
+                                                        <div class="zq_choose-item-icon">
+                                                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_199_104)">
+                                                                <path d="M3.23684 29.5605C3.45263 28.7912 3.56053 27.5824 3.88421 26.3737C4.1 25.6044 3.88421 25.055 3.34474 24.6154C2.58947 24.066 1.94211 23.4066 1.29474 22.7473C-0.431579 20.989 -0.431579 19.011 1.29474 17.1429C1.94211 16.4835 2.69737 15.8242 3.45263 15.1649C3.99211 14.7253 4.20789 14.1758 3.99211 13.4066C3.77632 12.5275 3.56053 11.6484 3.45263 10.7693C3.02105 8.1319 4.20789 6.48354 7.01316 6.15387C7.76842 6.04398 8.41579 6.04398 9.17105 5.93409C9.92632 5.93409 10.4658 5.60442 10.7895 4.7253C11.1132 3.84618 11.5447 2.85717 11.9763 2.08794C13.1632 -0.109863 14.8895 -0.659314 17.0474 0.439587C17.6947 0.769258 18.3421 1.09893 18.8816 1.53849C19.9605 2.41761 20.9316 2.41761 22.0105 1.53849C22.4421 1.20882 22.8737 0.989038 23.3053 0.769258C26.0026 -0.659314 28.0526 2.67178e-05 29.2395 2.85717C29.5632 3.51651 29.8868 4.28574 30.1026 5.05497C30.3184 5.71431 30.8579 6.04398 31.5053 6.04398C32.3684 6.04398 33.1237 6.15387 33.9868 6.26376C36.9 6.81321 38.0868 8.46157 37.4395 11.4286C37.3316 12.1978 37.1158 12.8572 36.9 13.6264C36.6842 14.2857 36.9 14.8352 37.4395 15.1649C38.0868 15.7143 38.8421 16.2638 39.4895 16.9231C41.4316 18.7912 41.4316 20.8791 39.5974 22.8572C39.0579 23.4066 38.4105 23.9561 37.7632 24.5055C37.0079 25.055 36.7921 25.7143 37.1158 26.5934C37.3316 27.2528 37.4395 27.9121 37.5474 28.4616C38.1947 31.6484 36.7921 33.5165 33.6632 33.7363C33.0158 33.7363 32.2605 33.8462 31.6132 33.9561C30.9658 33.9561 30.5342 34.2857 30.3184 34.9451C29.9947 35.7143 29.6711 36.3736 29.4553 37.1429C28.1605 40.1099 26.1105 40.7693 23.4132 39.1209C22.7658 38.7912 22.2263 38.3517 21.5789 38.022C20.9316 37.5824 20.3921 37.5824 19.7447 38.022C18.9895 38.5714 18.1263 39.011 17.3711 39.4506C15.2132 40.5495 13.3789 40 12.1921 37.8022C11.7605 36.9231 11.4368 36.044 11.0053 35.1649C10.6816 34.2857 10.1421 34.066 9.27895 33.9561C8.30789 33.8462 7.22895 33.8462 6.25789 33.6264C4.31579 33.2967 3.23684 31.8682 3.23684 29.5605ZM6.58158 9.78025C6.90526 10.989 7.12105 12.0879 7.33684 13.0769C7.76842 14.8352 7.33684 16.3737 5.93421 17.5824C5.17895 18.2418 4.53158 18.7912 3.88421 19.4506C3.45263 19.7802 3.45263 20.1099 3.88421 20.4396C4.63947 21.0989 5.39474 21.7583 6.15 22.5275C7.33684 23.6264 7.66053 25.055 7.33684 26.7033C7.12105 27.5824 7.01316 28.5715 6.68947 29.4506C6.47368 30.1099 6.79737 30.3297 7.44474 30.3297C8.2 30.3297 8.84737 30.4396 9.60263 30.5495C11.0053 30.6594 12.4079 30.989 13.1632 32.3077C13.5947 32.9671 13.9184 33.7363 14.2421 34.5055C14.5658 35.1649 14.8895 35.8242 15.2132 36.5934C16.2921 35.9341 17.1553 35.3846 18.1263 34.8352C19.7447 33.8462 21.3632 33.8462 22.8737 34.8352C23.6289 35.2747 24.4921 35.7143 25.2474 36.2638C25.6789 36.4835 25.8947 36.4835 26.1105 35.9341C26.3263 35.2747 26.65 34.6154 26.8658 33.9561C27.7289 31.6484 29.2395 30.5495 31.6132 30.4396C32.4763 30.4396 33.3395 30.2198 34.4184 30.1099C34.2026 28.9011 33.8789 27.9121 33.6632 26.8132C33.2316 24.9451 33.6632 23.4066 35.0658 22.1978C35.7132 21.6484 36.3605 20.989 37.0079 20.4396C37.4395 20 37.4395 19.6704 37.0079 19.3407C36.3605 18.7912 35.6053 18.1319 34.9579 17.5824C33.6632 16.3737 33.2316 14.9451 33.5553 13.1868C33.6632 12.4176 33.8789 11.6484 34.0947 10.7693C34.3105 9.78025 34.2026 9.67036 33.2316 9.56047C32.4763 9.45058 31.6132 9.45058 30.8579 9.34069C29.1316 9.12091 27.9447 8.35167 27.1895 6.70332C26.8658 6.04398 26.5421 5.27475 26.2184 4.50552C26.0026 4.06596 25.7868 3.73629 25.5711 3.29673C24.7079 3.84618 23.8447 4.28574 23.0895 4.83519C21.2553 6.04398 19.4211 6.04398 17.5868 4.83519C17.0474 4.50552 16.5079 4.06596 15.8605 3.73629C15.6447 3.6264 15.3211 3.51651 14.8895 3.29673C14.4579 4.28574 14.1342 5.16486 13.7026 6.04398C12.8395 8.13189 11.3289 9.2308 9.06316 9.34069C8.41579 9.45058 7.55263 9.67036 6.58158 9.78025Z" fill="currentColor"></path>
+                                                                <path d="M18.1263 22.967C19.7447 20.989 21.3632 19.0109 22.9816 17.0329C23.8447 16.0439 24.6 14.945 25.4632 13.956C26.2184 13.0769 27.1895 12.8571 27.9447 13.5164C28.7 14.1758 28.8079 15.1648 28.0526 16.1538C25.2474 19.5604 22.4421 23.0769 19.6368 26.4835C18.7737 27.4725 17.8026 27.5824 16.8316 26.5933C15.429 25.1648 14.0263 23.7362 12.6237 22.3076C11.7605 21.4285 11.7605 20.4395 12.5158 19.6703C13.2711 19.0109 14.2421 19.0109 15.1053 19.8901C16.0763 20.8791 17.0474 21.8681 18.1263 22.967Z" fill="currentColor"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <a href="#" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                    <h2 class="zq_choose-item-title">24/7</h2>
+                                                    <p>Наша команда всегда на связи. Мы предоставляем круглосуточную поддержку, чтобы вы могли быть уверены в стабильной работе ваших систем и оперативном решении любых вопросов.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="zq_choose-item mb-30">
+                                                    <div class="zq_choose-item-top">
+                                                        <div class="zq_choose-item-icon">
+                                                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_199_104)">
+                                                                <path d="M3.23684 29.5605C3.45263 28.7912 3.56053 27.5824 3.88421 26.3737C4.1 25.6044 3.88421 25.055 3.34474 24.6154C2.58947 24.066 1.94211 23.4066 1.29474 22.7473C-0.431579 20.989 -0.431579 19.011 1.29474 17.1429C1.94211 16.4835 2.69737 15.8242 3.45263 15.1649C3.99211 14.7253 4.20789 14.1758 3.99211 13.4066C3.77632 12.5275 3.56053 11.6484 3.45263 10.7693C3.02105 8.1319 4.20789 6.48354 7.01316 6.15387C7.76842 6.04398 8.41579 6.04398 9.17105 5.93409C9.92632 5.93409 10.4658 5.60442 10.7895 4.7253C11.1132 3.84618 11.5447 2.85717 11.9763 2.08794C13.1632 -0.109863 14.8895 -0.659314 17.0474 0.439587C17.6947 0.769258 18.3421 1.09893 18.8816 1.53849C19.9605 2.41761 20.9316 2.41761 22.0105 1.53849C22.4421 1.20882 22.8737 0.989038 23.3053 0.769258C26.0026 -0.659314 28.0526 2.67178e-05 29.2395 2.85717C29.5632 3.51651 29.8868 4.28574 30.1026 5.05497C30.3184 5.71431 30.8579 6.04398 31.5053 6.04398C32.3684 6.04398 33.1237 6.15387 33.9868 6.26376C36.9 6.81321 38.0868 8.46157 37.4395 11.4286C37.3316 12.1978 37.1158 12.8572 36.9 13.6264C36.6842 14.2857 36.9 14.8352 37.4395 15.1649C38.0868 15.7143 38.8421 16.2638 39.4895 16.9231C41.4316 18.7912 41.4316 20.8791 39.5974 22.8572C39.0579 23.4066 38.4105 23.9561 37.7632 24.5055C37.0079 25.055 36.7921 25.7143 37.1158 26.5934C37.3316 27.2528 37.4395 27.9121 37.5474 28.4616C38.1947 31.6484 36.7921 33.5165 33.6632 33.7363C33.0158 33.7363 32.2605 33.8462 31.6132 33.9561C30.9658 33.9561 30.5342 34.2857 30.3184 34.9451C29.9947 35.7143 29.6711 36.3736 29.4553 37.1429C28.1605 40.1099 26.1105 40.7693 23.4132 39.1209C22.7658 38.7912 22.2263 38.3517 21.5789 38.022C20.9316 37.5824 20.3921 37.5824 19.7447 38.022C18.9895 38.5714 18.1263 39.011 17.3711 39.4506C15.2132 40.5495 13.3789 40 12.1921 37.8022C11.7605 36.9231 11.4368 36.044 11.0053 35.1649C10.6816 34.2857 10.1421 34.066 9.27895 33.9561C8.30789 33.8462 7.22895 33.8462 6.25789 33.6264C4.31579 33.2967 3.23684 31.8682 3.23684 29.5605ZM6.58158 9.78025C6.90526 10.989 7.12105 12.0879 7.33684 13.0769C7.76842 14.8352 7.33684 16.3737 5.93421 17.5824C5.17895 18.2418 4.53158 18.7912 3.88421 19.4506C3.45263 19.7802 3.45263 20.1099 3.88421 20.4396C4.63947 21.0989 5.39474 21.7583 6.15 22.5275C7.33684 23.6264 7.66053 25.055 7.33684 26.7033C7.12105 27.5824 7.01316 28.5715 6.68947 29.4506C6.47368 30.1099 6.79737 30.3297 7.44474 30.3297C8.2 30.3297 8.84737 30.4396 9.60263 30.5495C11.0053 30.6594 12.4079 30.989 13.1632 32.3077C13.5947 32.9671 13.9184 33.7363 14.2421 34.5055C14.5658 35.1649 14.8895 35.8242 15.2132 36.5934C16.2921 35.9341 17.1553 35.3846 18.1263 34.8352C19.7447 33.8462 21.3632 33.8462 22.8737 34.8352C23.6289 35.2747 24.4921 35.7143 25.2474 36.2638C25.6789 36.4835 25.8947 36.4835 26.1105 35.9341C26.3263 35.2747 26.65 34.6154 26.8658 33.9561C27.7289 31.6484 29.2395 30.5495 31.6132 30.4396C32.4763 30.4396 33.3395 30.2198 34.4184 30.1099C34.2026 28.9011 33.8789 27.9121 33.6632 26.8132C33.2316 24.9451 33.6632 23.4066 35.0658 22.1978C35.7132 21.6484 36.3605 20.989 37.0079 20.4396C37.4395 20 37.4395 19.6704 37.0079 19.3407C36.3605 18.7912 35.6053 18.1319 34.9579 17.5824C33.6632 16.3737 33.2316 14.9451 33.5553 13.1868C33.6632 12.4176 33.8789 11.6484 34.0947 10.7693C34.3105 9.78025 34.2026 9.67036 33.2316 9.56047C32.4763 9.45058 31.6132 9.45058 30.8579 9.34069C29.1316 9.12091 27.9447 8.35167 27.1895 6.70332C26.8658 6.04398 26.5421 5.27475 26.2184 4.50552C26.0026 4.06596 25.7868 3.73629 25.5711 3.29673C24.7079 3.84618 23.8447 4.28574 23.0895 4.83519C21.2553 6.04398 19.4211 6.04398 17.5868 4.83519C17.0474 4.50552 16.5079 4.06596 15.8605 3.73629C15.6447 3.6264 15.3211 3.51651 14.8895 3.29673C14.4579 4.28574 14.1342 5.16486 13.7026 6.04398C12.8395 8.13189 11.3289 9.2308 9.06316 9.34069C8.41579 9.45058 7.55263 9.67036 6.58158 9.78025Z" fill="currentColor"></path>
+                                                                <path d="M18.1263 22.967C19.7447 20.989 21.3632 19.0109 22.9816 17.0329C23.8447 16.0439 24.6 14.945 25.4632 13.956C26.2184 13.0769 27.1895 12.8571 27.9447 13.5164C28.7 14.1758 28.8079 15.1648 28.0526 16.1538C25.2474 19.5604 22.4421 23.0769 19.6368 26.4835C18.7737 27.4725 17.8026 27.5824 16.8316 26.5933C15.429 25.1648 14.0263 23.7362 12.6237 22.3076C11.7605 21.4285 11.7605 20.4395 12.5158 19.6703C13.2711 19.0109 14.2421 19.0109 15.1053 19.8901C16.0763 20.8791 17.0474 21.8681 18.1263 22.967Z" fill="currentColor"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <a href="#" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                    <h2 class="zq_choose-item-title">10+</h2>
+                                                    <p>В нашей команде более 10 высококвалифицированных специалистов, готовых взяться за задачи любой сложности. Мы объединяем знания и опыт, чтобы предложить вам лучшие IT-решения.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5">
+                                        <div class="zq_choose-img mb-30">
+                                            <img src="{% static 'images/h1_1_3.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- choose area end -->
+
+                    <!-- testimonial area start -->
+                    <section class="zq_testimonial-area pt-100 pb-60">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6">
+                                    <div class="zq_testimonial-form mr-25 mb-40">
+                                        <h2 class="zq_testimonial-form-title">Оставить заявку</h2>
+                                        <form method="post" action="{% url 'app:index' %}">
+                                            {% csrf_token %}
+                                            <div class="row g-20">
+                                                <div class="col-sm-6">
+                                                    {{ form.name }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    {{ form.email }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    {{ form.phone }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    {{ form.service }}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{ form.message }}
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="zq_testimonial-btn">Отправить <i class="fa-regular fa-angle-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        {% if success %}
+                                            <p class="text-success">Ваше сообщение было успешно отправлено!</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- testimonial area end -->
+
+                    <!-- blog area start -->
+                    {% if latest_posts %}
+                    <section class="zq_blog-area pt-95 pb-70">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-end">
+                                <div class="col-lg-6 col-md-8">
+                                    <div class="zq_section-area">
+                                        <span class="zq_section-subtitle mb-20">Наш Блог</span>
+                                        <h2 class="zq_section-title mb-40">Последние новости в Мире IT</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="zq_choose-right text-md-end mb-50">
+                                        <a href="{% url 'blog:blog-list' %}" class="zq_theme-btn">Больше постов</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="zq_blog-right mb-30">
+                                        {% for p in latest_posts %}
+                                        <div class="zq_blog-item-small">
+                                            <div class="zq_blog-item-small-img">
+                                                <a href="{% url 'blog:blog-detail' slug=p.slug %}"><img src="{{ p.image.url }}" alt=""></a>
+                                            </div>
+                                            <div class="zq_blog-item-small-content">
+                                                <h4 class="zq_blog-item-small-content-title"><a href="{% url 'blog:blog-detail' slug=p.slug %}">{{ p.title }}</a></h4>
+                                                <div class="zq_blog-item-small-content-admin">
+                                                    <img src="{% static 'images/icon.png' %}" style="width: 50px; height: 50px;" alt="">
+                                                    <span><a href="#">{{ p.author }}</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {% endif %}
+                    <!-- blog area end -->
+
+                    <!-- cta area start -->
+                    <div class="zq_cta-area">
+                        <div class="container">
+                            <div class="zq_cta-wrapper">
+                                <h2 class="zq_cta-title">Получи скидку на первый заказ. <br>
+                                    Позвони нам сейчас!</h2>
+                                <div class="zq_cta-action">
+                                    <img src="{% static 'images/call.png' %}" alt="">
+                                    <div class="zq_cta-action-info">
+                                        <span>Номер телефона</span>
+                                        <a href="tel:+7 (707) 777 2817">+7 (707) 777 2817</a>
+                                    </div>
+                                </div>
+                                <div class="zq_cta-shape-1">
+                                    <svg width="320" height="135" viewBox="0 0 320 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.48873 267.853C9.84073 271.725 7.23273 269.613 154.945 319.181C158.227 320.274 161.775 320.274 165.057 319.181C304.001 271.997 308.545 273.165 314.529 267.853C316.39 266.113 317.866 264.004 318.865 261.661C319.584 259.857 319.969 257.938 320.001 255.997V63.9968C319.969 62.0555 319.584 60.1362 318.865 58.3328C317.866 55.9893 316.39 53.8803 314.529 52.1408C308.721 46.9888 305.457 48.3008 165.057 0.812773C161.775 -0.280364 158.227 -0.280364 154.945 0.812773C110.401 15.7408 12.5607 47.9968 8.67273 49.9968C7.51955 50.573 6.44427 51.2934 5.47273 52.1408C3.61112 53.883 2.1295 55.9911 1.12073 58.3328C0.407022 60.1372 0.0275118 62.0565 0.000732422 63.9968V255.997C0.0326085 257.938 0.41755 259.857 1.13673 261.661C2.14183 264.004 3.62395 266.113 5.48873 267.853ZM288.001 233.789L229.057 214.157C225.025 212.816 220.627 213.131 216.828 215.034C213.029 216.936 210.142 220.269 208.801 224.301C207.46 228.332 207.775 232.731 209.678 236.53C211.58 240.328 214.913 243.216 218.945 244.557L253.409 255.997L176.001 281.789V123.533L288.001 86.2048V233.789ZM160.001 32.8608L253.409 63.9968L160.001 95.1328L66.5927 63.9968L160.001 32.8608ZM32.0007 86.2048L144.001 123.533V281.789L66.5927 255.997L101.057 244.509C105.088 243.168 108.422 240.28 110.324 236.482C112.226 232.683 112.542 228.284 111.201 224.253C109.86 220.221 106.972 216.888 103.174 214.986C99.3749 213.083 94.976 212.768 90.9447 214.109L32.0007 233.789V86.2048Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <div class="zq_cta-shape-2">
+                                    <svg width="103" height="74" viewBox="0 0 103 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.03453 52.2535C4.77987 53.8064 3.73395 52.9594 62.9726 72.8382C64.2888 73.2766 65.7117 73.2766 67.0279 72.8382C122.75 53.9154 124.573 54.3839 126.972 52.2535C127.719 51.5559 128.311 50.7101 128.711 49.7703C129 49.047 129.154 48.2773 129.167 47.4988V-29.5012C129.154 -30.2798 129 -31.0495 128.711 -31.7727C128.311 -32.7125 127.719 -33.5584 126.972 -34.256C124.643 -36.3221 123.334 -35.796 67.0279 -54.8406C65.7117 -55.279 64.2888 -55.279 62.9726 -54.8406C45.1086 -48.8539 5.8707 -35.9179 4.31145 -35.1158C3.84898 -34.8847 3.41775 -34.5958 3.02812 -34.256C2.28154 -33.5573 1.68734 -32.7118 1.28278 -31.7727C0.996557 -31.0491 0.844358 -30.2794 0.833618 -29.5012V47.4988C0.846402 48.2773 1.00078 49.047 1.2892 49.7703C1.69229 50.7102 2.28668 51.5559 3.03453 52.2535ZM116.334 38.5924L92.6946 30.7192C91.0779 30.1814 89.3138 30.3079 87.7903 31.0708C86.2669 31.8338 85.1089 33.1706 84.5711 34.7874C84.0333 36.4041 84.1598 38.1682 84.9228 39.6917C85.6857 41.2151 87.0226 42.3731 88.6393 42.9109L102.461 47.4988L71.4169 57.8424V-5.62481L116.334 -20.5949V38.5924ZM65.0003 -41.9881L102.461 -29.5012L65.0003 -17.0144L27.5398 -29.5012L65.0003 -41.9881ZM13.667 -20.5949L58.5836 -5.62481V57.8424L27.5398 47.4988L41.3613 42.8916C42.978 42.3538 44.3149 41.1959 45.0778 39.6724C45.8407 38.149 45.9672 36.3848 45.4295 34.7681C44.8917 33.1514 43.7337 31.8145 42.2102 31.0516C40.6868 30.2887 38.9227 30.1622 37.306 30.6999L13.667 38.5924V-20.5949Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cta area end -->
+                </main>
+
+                <!-- footer area start -->
+                {% include 'components/footer.html' %}
+                <!-- footer area end -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery Js -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollSmoother.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'js/SplitText.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/chroma.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+ 
+  
+
+</body></html>

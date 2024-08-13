@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мы — IT-компания, специализирующаяся на разработке программного обеспечения, веб-решений и мобильных приложений. Наша миссия — делать сложные задачи простыми, предоставляя клиентам инструменты для достижения их целей.">
+    <meta name="keywords" content="IT Компания, Айти компания, IT, Разработка сайтов, Разработка мобильных приложений">
+    <meta name="author" content="WorkBench">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workbench - Инновационные решения для вашего бизнеса.</title>
+
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  </head>
+  <body>
+
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
+
+     <!-- ==================== Start mobile menu ================= -->
+
+     <div class="zq_mobile_menu">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" style="height: 65px;"  alt="">
+        </div>
+        <div class="close-menu cursor-pointer ti-close"><i class="fa-sharp fa-light fa-xmark"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="menu-text">
+                        <div class="text">
+                            <h2>Меню</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="menu-navbar">
+                        <ul class="main-menu">
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:index' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Главная">Главная</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:about' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="О нас">О нас</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:portfolio' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Портфолио">Портфолио</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'blog:blog-list' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Блог">Блог</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:contacts' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Контакты">Контакты</span></a>
+                                </div>
+                            </li>
+                            <hr>
+                            {% if user.is_authenticated %}
+
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:profile' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Профиль">Профиль</span></a>
+                                    </div>
+                                </li>
+
+                            {% else %}
+
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:login' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Войти">Войти</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:register' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Регистрация">Регистрация</span></a>
+                                    </div>
+                                </li>
+
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="cont-info">
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Адрес</h6>
+                            <h5>Казахстан, <br> г.Алматы | г.Астана</h5>
+                        </div>
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Социальные сети</h6>
+                            <ul class="social">
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item mb-40">
+                            <h6 class="sub-title mb-15">Связаться с нами</h6>
+                            <h5><a href="#">info@workbench.kz</a></h5>
+                            <h5 class="underline mt-10"><a href="tel:+704-555-0127">+7 (707) 777 2817</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== End Navbar ==================== -->
+
+    <div class="has-smooth" id="has_smooth"></div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <div class="body-wrapper">
+                <!-- Start Header area -->
+                {% include 'components/header.html' %}
+                <!-- end Header area -->
+                <main>
+                    <!-- breadcrumb area start -->
+                    <div class="zq_breadcrumb-area zq_dark_bg">
+
+                    </div>
+                    <!-- breadcrumb area start -->
+
+                    <!-- contact area start -->
+                    <section class="zq_inner_contact-area pt-100 pb-100 zq_dark_bg">
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <div class="col-xxl-4 col-lg-5">
+                                    <div class="zq_inner_contact-left mb-40 mb-lg-0">
+                                        <div class="zq_section-area zq_inner_section">
+                                            <h2 class=" mb-20" style="color: white;"><span>Вход</span></h2>
+                                            <p class="zq_section-text mb-30"></p>
+                                        </div>
+                                        <div class="zq_inner_contact-content">
+                                            <div class="zq_blog_details-content-social">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-7">
+                                    <div class="zq_inner_contact-form">
+                                        <form method="post" action="{% url 'users:login' %}">
+                                            {% csrf_token %}
+                                            <div class="row g-20">
+                                                <div class="col-sm-6">
+                                                    <input type="text" name="username" placeholder="Username*" class="form-control">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="password" name="password" placeholder="Password*" class="form-control fakepassword">
+                                                </div>
+                                                <p>Нет аккаунта? <a href={% url 'users:register' %}>Зарегистрироваться!</a></p>
+                                                <div class="col-12" style="text-align: center;">
+                                                    <button type="submit" class="zq_inner_contact-form-btn">Вход</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- contact area end -->
+
+
+                    <!-- cta area start -->
+                    <div class="zq_cta-area zq_cta_bg">
+                        <div class="container">
+                            <div class="zq_cta-wrapper">
+                                <h2 class="zq_cta-title">Давайте работать вместе. <br>
+                                    Позвоните нам сейчас!</h2>
+                                <div class="zq_cta-action">
+                                    <img src="{% static 'images/call.png' %}" alt="">
+                                    <div class="zq_cta-action-info">
+                                        <span>Номер телефона</span>
+                                        <a href="tel:+7 (707) 777 2817">+7 (707) 777 2817</a>
+                                    </div>
+                                </div>
+                                <div class="zq_cta-shape-1">
+                                    <svg width="320" height="135" viewBox="0 0 320 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.48873 267.853C9.84073 271.725 7.23273 269.613 154.945 319.181C158.227 320.274 161.775 320.274 165.057 319.181C304.001 271.997 308.545 273.165 314.529 267.853C316.39 266.113 317.866 264.004 318.865 261.661C319.584 259.857 319.969 257.938 320.001 255.997V63.9968C319.969 62.0555 319.584 60.1362 318.865 58.3328C317.866 55.9893 316.39 53.8803 314.529 52.1408C308.721 46.9888 305.457 48.3008 165.057 0.812773C161.775 -0.280364 158.227 -0.280364 154.945 0.812773C110.401 15.7408 12.5607 47.9968 8.67273 49.9968C7.51955 50.573 6.44427 51.2934 5.47273 52.1408C3.61112 53.883 2.1295 55.9911 1.12073 58.3328C0.407022 60.1372 0.0275118 62.0565 0.000732422 63.9968V255.997C0.0326085 257.938 0.41755 259.857 1.13673 261.661C2.14183 264.004 3.62395 266.113 5.48873 267.853ZM288.001 233.789L229.057 214.157C225.025 212.816 220.627 213.131 216.828 215.034C213.029 216.936 210.142 220.269 208.801 224.301C207.46 228.332 207.775 232.731 209.678 236.53C211.58 240.328 214.913 243.216 218.945 244.557L253.409 255.997L176.001 281.789V123.533L288.001 86.2048V233.789ZM160.001 32.8608L253.409 63.9968L160.001 95.1328L66.5927 63.9968L160.001 32.8608ZM32.0007 86.2048L144.001 123.533V281.789L66.5927 255.997L101.057 244.509C105.088 243.168 108.422 240.28 110.324 236.482C112.226 232.683 112.542 228.284 111.201 224.253C109.86 220.221 106.972 216.888 103.174 214.986C99.3749 213.083 94.976 212.768 90.9447 214.109L32.0007 233.789V86.2048Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <div class="zq_cta-shape-2">
+                                    <svg width="103" height="74" viewBox="0 0 103 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.03453 52.2535C4.77987 53.8064 3.73395 52.9594 62.9726 72.8382C64.2888 73.2766 65.7117 73.2766 67.0279 72.8382C122.75 53.9154 124.573 54.3839 126.972 52.2535C127.719 51.5559 128.311 50.7101 128.711 49.7703C129 49.047 129.154 48.2773 129.167 47.4988V-29.5012C129.154 -30.2798 129 -31.0495 128.711 -31.7727C128.311 -32.7125 127.719 -33.5584 126.972 -34.256C124.643 -36.3221 123.334 -35.796 67.0279 -54.8406C65.7117 -55.279 64.2888 -55.279 62.9726 -54.8406C45.1086 -48.8539 5.8707 -35.9179 4.31145 -35.1158C3.84898 -34.8847 3.41775 -34.5958 3.02812 -34.256C2.28154 -33.5573 1.68734 -32.7118 1.28278 -31.7727C0.996557 -31.0491 0.844358 -30.2794 0.833618 -29.5012V47.4988C0.846402 48.2773 1.00078 49.047 1.2892 49.7703C1.69229 50.7102 2.28668 51.5559 3.03453 52.2535ZM116.334 38.5924L92.6946 30.7192C91.0779 30.1814 89.3138 30.3079 87.7903 31.0708C86.2669 31.8338 85.1089 33.1706 84.5711 34.7874C84.0333 36.4041 84.1598 38.1682 84.9228 39.6917C85.6857 41.2151 87.0226 42.3731 88.6393 42.9109L102.461 47.4988L71.4169 57.8424V-5.62481L116.334 -20.5949V38.5924ZM65.0003 -41.9881L102.461 -29.5012L65.0003 -17.0144L27.5398 -29.5012L65.0003 -41.9881ZM13.667 -20.5949L58.5836 -5.62481V57.8424L27.5398 47.4988L41.3613 42.8916C42.978 42.3538 44.3149 41.1959 45.0778 39.6724C45.8407 38.149 45.9672 36.3848 45.4295 34.7681C44.8917 33.1514 43.7337 31.8145 42.2102 31.0516C40.6868 30.2887 38.9227 30.1622 37.306 30.6999L13.667 38.5924V-20.5949Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cta area end -->
+                </main>
+
+                <!-- footer area start -->
+                {% include 'components/footer.html' %}
+                <!-- footer area end -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery Js -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollSmoother.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'js/SplitText.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/chroma.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+</html>

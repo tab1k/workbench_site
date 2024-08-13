@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мы — IT-компания, специализирующаяся на разработке программного обеспечения, веб-решений и мобильных приложений. Наша миссия — делать сложные задачи простыми, предоставляя клиентам инструменты для достижения их целей.">
+    <meta name="keywords" content="IT Компания, Айти компания, IT, Разработка сайтов, Разработка мобильных приложений">
+    <meta name="author" content="WorkBench">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workbench - Инновационные решения для вашего бизнеса.</title>
+
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  </head>
+  <body>
+
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
+
+     <!-- ==================== Start mobile menu ================= -->
+
+     <div class="zq_mobile_menu">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" style="height: 65px;"  alt="">
+        </div>
+        <div class="close-menu cursor-pointer ti-close"><i class="fa-sharp fa-light fa-xmark"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="menu-text">
+                        <div class="text">
+                            <h2>Меню</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="menu-navbar">
+                        <ul class="main-menu">
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:index' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Главная">Главная</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:about' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="О нас">О нас</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:portfolio' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Портфолио">Портфолио</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'blog:blog-list' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Блог">Блог</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:contacts' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Контакты">Контакты</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="cont-info">
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Адрес</h6>
+                            <h5>Казахстан, <br> г.Алматы | г.Астана</h5>
+                        </div>
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Социальные сети</h6>
+                            <ul class="social">
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item mb-40">
+                            <h6 class="sub-title mb-15">Связаться с нами</h6>
+                            <h5><a href="#">info@workbench.kz</a></h5>
+                            <h5 class="underline mt-10"><a href="tel:+704-555-0127">+7 (707) 777 2817</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== End Navbar ==================== -->
+
+    <div class="has-smooth" id="has_smooth"></div>
+    
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <div class="body-wrapper">
+                <!-- Start Header area -->
+                {% include 'components/header.html' %}
+                <!-- end Header area -->
+                <main>
+                    <!-- breadcrumb area start -->
+                    <div class="zq_breadcrumb-area zq_dark_bg">
+                        <div class="zq_breadcrumb-wrap">
+                            <img src="{% static 'images/breadcrumb.png' %}" alt="" class="zq_breadcrumb-img">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="zq_breadcrumb-content text-center">
+                                            <h2 class="zq_breadcrumb-content-title">Контакты</h2>
+                                            <div class="zq_breadcrumb-content-list">
+                                                <a href="{% url 'app:index' %}">Главная</a>
+                                                <span>Контакты</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- breadcrumb area start -->
+
+                    <!-- contact top area start -->
+                    <div class="zq_inner_contact_top-area zq_dark_bg pt-100 pb-70">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="zq_inner_contact_top-item mb-30">
+                                        <div class="zq_inner_contact_top-item-icon">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M24.8955 19.5129C24.2506 18.8414 23.4727 18.4824 22.6483 18.4824C21.8306 18.4824 21.0461 18.8348 20.3746 19.5062L18.2738 21.6004C18.1009 21.5074 17.928 21.4209 17.7618 21.3345C17.5225 21.2148 17.2965 21.1018 17.1037 20.9822C15.1358 19.7323 13.3474 18.1034 11.6321 15.9959C10.8011 14.9455 10.2426 14.0613 9.83708 13.1638C10.3822 12.6651 10.8875 12.1466 11.3795 11.648C11.5656 11.4618 11.7518 11.269 11.9379 11.0828C13.3341 9.6867 13.3341 7.87837 11.9379 6.48223L10.123 4.66725C9.91686 4.46115 9.70411 4.2484 9.50466 4.03566C9.10577 3.62346 8.68692 3.19797 8.25479 2.79908C7.6099 2.16084 6.8387 1.82178 6.02761 1.82178C5.21652 1.82178 4.43202 2.16084 3.76719 2.79908C3.76054 2.80572 3.76054 2.80572 3.75389 2.81237L1.49347 5.09274C0.642492 5.94372 0.157167 6.98085 0.0507942 8.18419C-0.108765 10.1255 0.462988 11.9338 0.901775 13.1172C1.9788 16.0225 3.58769 18.7151 5.98772 21.6004C8.89967 25.0775 12.4033 27.8232 16.4056 29.7579C17.9347 30.4826 19.9757 31.3402 22.2561 31.4865C22.3957 31.4931 22.542 31.4997 22.6749 31.4997C24.2107 31.4997 25.5005 30.9479 26.511 29.851C26.5176 29.8377 26.5309 29.831 26.5376 29.8177C26.8833 29.3989 27.2822 29.0199 27.701 28.6144C27.9869 28.3418 28.2794 28.0559 28.5653 27.7568C29.2235 27.072 29.5692 26.2742 29.5692 25.4565C29.5692 24.6321 29.2168 23.8409 28.5454 23.1761L24.8955 19.5129ZM27.2755 26.5135C27.2689 26.5135 27.2689 26.5202 27.2755 26.5135C27.0163 26.7928 26.7503 27.0454 26.4645 27.3246C26.0323 27.7368 25.5935 28.169 25.1813 28.6543C24.5099 29.3723 23.7187 29.7114 22.6816 29.7114C22.5819 29.7114 22.4755 29.7114 22.3758 29.7047C20.4012 29.5784 18.5663 28.8072 17.1901 28.149C13.4272 26.3274 10.123 23.7412 7.37721 20.4636C5.11014 17.7311 3.59433 15.2048 2.59044 12.4923C1.97215 10.8369 1.74611 9.54709 1.84583 8.33045C1.91232 7.5526 2.21149 6.90772 2.7633 6.35591L5.03036 4.08884C5.35613 3.78302 5.70184 3.61682 6.0409 3.61682C6.45975 3.61682 6.79881 3.86945 7.01156 4.0822C7.0182 4.08884 7.02485 4.09549 7.0315 4.10214C7.43705 4.48109 7.82265 4.87334 8.22819 5.29219C8.43429 5.50493 8.64703 5.71768 8.85978 5.93707L10.6748 7.75205C11.3795 8.45677 11.3795 9.1083 10.6748 9.81302C10.482 10.0058 10.2958 10.1986 10.103 10.3848C9.54455 10.9565 9.01269 11.4884 8.43429 12.007C8.42099 12.0203 8.4077 12.0269 8.40105 12.0402C7.82929 12.612 7.93567 13.1704 8.05534 13.5494C8.06199 13.5693 8.06863 13.5893 8.07528 13.6092C8.54731 14.7527 9.21214 15.8297 10.2227 17.1128L10.2293 17.1195C12.0643 19.3799 13.9989 21.1417 16.133 22.4913C16.4056 22.6642 16.6848 22.8038 16.9508 22.9368C17.1901 23.0564 17.4161 23.1694 17.6089 23.2891C17.6355 23.3024 17.6621 23.3224 17.6887 23.3356C17.9148 23.4487 18.1275 23.5019 18.3469 23.5019C18.8987 23.5019 19.2444 23.1561 19.3574 23.0431L21.6311 20.7694C21.8572 20.5434 22.2162 20.2708 22.635 20.2708C23.0472 20.2708 23.3863 20.5301 23.5924 20.7561C23.599 20.7628 23.599 20.7628 23.6057 20.7694L27.2689 24.4326C27.9537 25.1107 27.9537 25.8088 27.2755 26.5135Z" fill="currentColor"></path>
+                                                <path d="M17.0239 7.49286C18.7658 7.78539 20.3481 8.60978 21.6113 9.87295C22.8744 11.1361 23.6922 12.7184 23.9913 14.4603C24.0645 14.8991 24.4434 15.2049 24.8756 15.2049C24.9287 15.2049 24.9753 15.1982 25.0285 15.1916C25.5204 15.1118 25.8462 14.6464 25.7664 14.1545C25.4074 12.0469 24.4102 10.1256 22.8877 8.60313C21.3653 7.08067 19.4439 6.08343 17.3364 5.72442C16.8444 5.64464 16.3857 5.97041 16.2993 6.45573C16.2128 6.94106 16.532 7.41308 17.0239 7.49286Z" fill="currentColor"></path>
+                                                <path d="M31.4651 13.8953C30.8734 10.4249 29.238 7.26697 26.7249 4.75391C24.2119 2.24086 21.0539 0.605381 17.5835 0.0136832C17.0982 -0.0727446 16.6395 0.25967 16.553 0.744995C16.4732 1.23697 16.799 1.6957 17.291 1.78213C20.3891 2.30734 23.2146 3.77662 25.4617 6.01709C27.7089 8.26421 29.1715 11.0897 29.6967 14.1878C29.7698 14.6266 30.1488 14.9325 30.5809 14.9325C30.6341 14.9325 30.6806 14.9258 30.7338 14.9192C31.2192 14.846 31.5516 14.3806 31.4651 13.8953Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="zq_inner_contact_top-item-info">
+                                            <h4>Телефон</h4>
+                                            <a href="tel:+7 (707) 777 2817">+7 (707) 777 2817</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="zq_inner_contact_top-item mb-30">
+                                        <div class="zq_inner_contact_top-item-icon">
+                                            <svg width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M27.9046 0.76416H4.10196C1.97719 0.76416 0.25 2.49135 0.25 4.61612V20.8843C0.25 23.009 1.97719 24.7362 4.10196 24.7362H27.898C30.0228 24.7362 31.75 23.009 31.75 20.8843V4.62263C31.7565 2.49787 30.0293 0.76416 27.9046 0.76416ZM29.9967 20.8843C29.9967 22.0379 29.0582 22.9765 27.9046 22.9765H4.10196C2.94832 22.9765 2.00978 22.0379 2.00978 20.8843V4.62263C2.00978 3.469 2.94832 2.53045 4.10196 2.53045H27.898C29.0517 2.53045 29.9902 3.469 29.9902 4.62263V20.8843H29.9967Z" fill="currentColor"></path>
+                                                <path d="M20.115 12.5482L27.8189 5.63942C28.1773 5.31354 28.2099 4.75954 27.8841 4.39454C27.5582 4.03607 27.0042 4.00348 26.6392 4.32937L16.0153 13.8647L13.9427 12.0137C13.9362 12.0072 13.9297 12.0007 13.9297 11.9942C13.8841 11.9485 13.8384 11.9094 13.7863 11.8703L5.3524 4.32285C4.98741 3.99697 4.4334 4.02955 4.10752 4.39454C3.78163 4.75954 3.81422 5.31354 4.17921 5.63942L11.9744 12.6068L4.2118 19.8741C3.85985 20.2065 3.84029 20.7605 4.17269 21.1189C4.34867 21.3014 4.58331 21.3992 4.81795 21.3992C5.03303 21.3992 5.24811 21.321 5.41757 21.1646L13.2975 13.7931L15.4353 15.7027C15.6047 15.8526 15.8133 15.9243 16.0219 15.9243C16.2304 15.9243 16.4455 15.8461 16.6084 15.6962L18.8049 13.7279L26.6392 21.1711C26.8086 21.334 27.0302 21.4122 27.2453 21.4122C27.48 21.4122 27.7081 21.321 27.8841 21.1385C28.2165 20.7865 28.2034 20.226 27.8515 19.8936L20.115 12.5482Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="zq_inner_contact_top-item-info">
+                                            <h4>Почта</h4>
+                                            <a href="mailto:info@gmail.com">info@workbench.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="zq_inner_contact_top-item mb-30">
+                                        <div class="zq_inner_contact_top-item-icon">
+                                            <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.7436 0C5.78322 0 0.117188 5.66604 0.117188 12.6264C0.117188 13.4189 0.189829 14.2179 0.341716 14.9972C0.348319 15.0434 0.374735 15.1821 0.427565 15.4198C0.619074 16.2717 0.903036 17.1104 1.27285 17.9094C2.63322 21.1123 5.62473 26.0321 12.1889 31.3019C12.354 31.434 12.5521 31.5 12.7502 31.5C12.9483 31.5 13.1464 31.434 13.3115 31.3019C19.8691 26.0321 22.8672 21.1123 24.2276 17.9094C24.5974 17.1104 24.8813 16.2783 25.0728 15.4198C25.1257 15.1821 25.1521 15.0434 25.1587 14.9972C25.304 14.2179 25.3832 13.4189 25.3832 12.6264C25.37 5.66604 19.704 0 12.7436 0ZM23.3889 14.6868C23.3889 14.7 23.3823 14.7132 23.3823 14.7264C23.3757 14.7594 23.3559 14.8585 23.3228 15.0104C23.3228 15.017 23.3228 15.017 23.3228 15.0236C23.1578 15.7632 22.9134 16.483 22.5898 17.1764C22.5832 17.183 22.5832 17.1962 22.5766 17.2028C21.3417 20.1283 18.6342 24.5925 12.7436 29.4594C6.85304 24.5925 4.14549 20.1283 2.91058 17.2028C2.90398 17.1962 2.90398 17.183 2.89738 17.1764C2.58039 16.4896 2.33606 15.7632 2.16436 15.0236C2.16436 15.017 2.16436 15.017 2.16436 15.0104C2.12473 14.8585 2.11153 14.7594 2.10492 14.7264C2.10492 14.7132 2.09832 14.7 2.09832 14.6802C1.96624 14 1.90021 13.3132 1.90021 12.6198C1.90021 6.6434 6.76719 1.77642 12.7436 1.77642C18.72 1.77642 23.587 6.6434 23.587 12.6198C23.587 13.3198 23.521 14.0132 23.3889 14.6868Z" fill="currentColor"></path>
+                                                <path d="M12.7435 4.74805C8.32562 4.74805 4.72656 8.3471 4.72656 12.765C4.72656 17.183 8.32562 20.782 12.7435 20.782C17.1615 20.782 20.7605 17.183 20.7605 12.765C20.7605 8.3471 17.1615 4.74805 12.7435 4.74805ZM12.7435 18.999C9.30298 18.999 6.50958 16.199 6.50958 12.765C6.50958 9.33107 9.30958 6.53107 12.7435 6.53107C16.1775 6.53107 18.9775 9.33107 18.9775 12.765C18.9775 16.199 16.1841 18.999 12.7435 18.999Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="zq_inner_contact_top-item-info">
+                                            <h4>Локация</h4>
+                                            <p>Казахстан</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact top area end -->
+
+                    <div class="zq_border-top"></div>
+
+                    <!-- contact area start -->
+                    <section class="zq_inner_contact-area pt-100 pb-20 zq_dark_bg">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6">
+                                    <div class="zq_testimonial-form mr-25 mb-40">
+                                        <h2 class="zq_testimonial-form-title">Оставить заявку</h2>
+                                        <form method="post" action="{% url 'app:index' %}">
+                                            {% csrf_token %}
+                                            <div class="row g-20">
+                                                <div class="col-sm-6">
+                                                    {{ form.name }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    {{ form.email }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    {{ form.phone }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    {{ form.service }}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{ form.message }}
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="zq_testimonial-btn">Отправить <i class="fa-regular fa-angle-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        {% if success %}
+                                            <p class="text-success">Ваше сообщение было успешно отправлено!</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- contact area end -->
+
+                    <!-- map area start -->
+                    <div class="zq_inner_map-area zq_dark_bg pb-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="zq_inner_map-wrap">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d320668.68933942175!2d71.17126704973772!3d51.10432468960118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424580c47db54609%3A0x97f9148dddb19228!2z0JDRgdGC0LDQvdCw!5e0!3m2!1sru!2skz!4v1723512395596!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- map area end -->
+
+                    <!-- cta area start -->
+                    <div class="zq_cta-area zq_cta_bg">
+                        <div class="container">
+                            <div class="zq_cta-wrapper">
+                                <h2 class="zq_cta-title">Получи скидку на первый заказ. <br>
+                                    Позвони нам сейчас!</h2>
+                                <div class="zq_cta-action">
+                                    <img src="{% static 'images/call.png' %}" alt="">
+                                    <div class="zq_cta-action-info">
+                                        <span>Номер телефона</span>
+                                        <a href="tel:+7 (707) 777 2817">+7 (707) 777 2817</a>
+                                    </div>
+                                </div>
+                                <div class="zq_cta-shape-1">
+                                    <svg width="320" height="135" viewBox="0 0 320 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.48873 267.853C9.84073 271.725 7.23273 269.613 154.945 319.181C158.227 320.274 161.775 320.274 165.057 319.181C304.001 271.997 308.545 273.165 314.529 267.853C316.39 266.113 317.866 264.004 318.865 261.661C319.584 259.857 319.969 257.938 320.001 255.997V63.9968C319.969 62.0555 319.584 60.1362 318.865 58.3328C317.866 55.9893 316.39 53.8803 314.529 52.1408C308.721 46.9888 305.457 48.3008 165.057 0.812773C161.775 -0.280364 158.227 -0.280364 154.945 0.812773C110.401 15.7408 12.5607 47.9968 8.67273 49.9968C7.51955 50.573 6.44427 51.2934 5.47273 52.1408C3.61112 53.883 2.1295 55.9911 1.12073 58.3328C0.407022 60.1372 0.0275118 62.0565 0.000732422 63.9968V255.997C0.0326085 257.938 0.41755 259.857 1.13673 261.661C2.14183 264.004 3.62395 266.113 5.48873 267.853ZM288.001 233.789L229.057 214.157C225.025 212.816 220.627 213.131 216.828 215.034C213.029 216.936 210.142 220.269 208.801 224.301C207.46 228.332 207.775 232.731 209.678 236.53C211.58 240.328 214.913 243.216 218.945 244.557L253.409 255.997L176.001 281.789V123.533L288.001 86.2048V233.789ZM160.001 32.8608L253.409 63.9968L160.001 95.1328L66.5927 63.9968L160.001 32.8608ZM32.0007 86.2048L144.001 123.533V281.789L66.5927 255.997L101.057 244.509C105.088 243.168 108.422 240.28 110.324 236.482C112.226 232.683 112.542 228.284 111.201 224.253C109.86 220.221 106.972 216.888 103.174 214.986C99.3749 213.083 94.976 212.768 90.9447 214.109L32.0007 233.789V86.2048Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <div class="zq_cta-shape-2">
+                                    <svg width="103" height="74" viewBox="0 0 103 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.03453 52.2535C4.77987 53.8064 3.73395 52.9594 62.9726 72.8382C64.2888 73.2766 65.7117 73.2766 67.0279 72.8382C122.75 53.9154 124.573 54.3839 126.972 52.2535C127.719 51.5559 128.311 50.7101 128.711 49.7703C129 49.047 129.154 48.2773 129.167 47.4988V-29.5012C129.154 -30.2798 129 -31.0495 128.711 -31.7727C128.311 -32.7125 127.719 -33.5584 126.972 -34.256C124.643 -36.3221 123.334 -35.796 67.0279 -54.8406C65.7117 -55.279 64.2888 -55.279 62.9726 -54.8406C45.1086 -48.8539 5.8707 -35.9179 4.31145 -35.1158C3.84898 -34.8847 3.41775 -34.5958 3.02812 -34.256C2.28154 -33.5573 1.68734 -32.7118 1.28278 -31.7727C0.996557 -31.0491 0.844358 -30.2794 0.833618 -29.5012V47.4988C0.846402 48.2773 1.00078 49.047 1.2892 49.7703C1.69229 50.7102 2.28668 51.5559 3.03453 52.2535ZM116.334 38.5924L92.6946 30.7192C91.0779 30.1814 89.3138 30.3079 87.7903 31.0708C86.2669 31.8338 85.1089 33.1706 84.5711 34.7874C84.0333 36.4041 84.1598 38.1682 84.9228 39.6917C85.6857 41.2151 87.0226 42.3731 88.6393 42.9109L102.461 47.4988L71.4169 57.8424V-5.62481L116.334 -20.5949V38.5924ZM65.0003 -41.9881L102.461 -29.5012L65.0003 -17.0144L27.5398 -29.5012L65.0003 -41.9881ZM13.667 -20.5949L58.5836 -5.62481V57.8424L27.5398 47.4988L41.3613 42.8916C42.978 42.3538 44.3149 41.1959 45.0778 39.6724C45.8407 38.149 45.9672 36.3848 45.4295 34.7681C44.8917 33.1514 43.7337 31.8145 42.2102 31.0516C40.6868 30.2887 38.9227 30.1622 37.306 30.6999L13.667 38.5924V-20.5949Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cta area end -->
+                </main>
+
+                <!-- footer area start -->
+                {% include 'components/footer.html' %}
+                <!-- footer area end -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery Js -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollSmoother.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'js/SplitText.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/chroma.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+ 
+  
+
+</body></html>

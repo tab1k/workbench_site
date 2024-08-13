@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мы — IT-компания, специализирующаяся на разработке программного обеспечения, веб-решений и мобильных приложений. Наша миссия — делать сложные задачи простыми, предоставляя клиентам инструменты для достижения их целей.">
+    <meta name="keywords" content="IT Компания, Айти компания, IT, Разработка сайтов, Разработка мобильных приложений">
+    <meta name="author" content="WorkBench">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workbench - Инновационные решения для вашего бизнеса.</title>
+
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  </head>
+  <body>
+
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
+
+     <!-- ==================== Start mobile menu ================= -->
+
+     <div class="zq_mobile_menu">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" style="height: 65px;"  alt="">
+        </div>
+        <div class="close-menu cursor-pointer ti-close"><i class="fa-sharp fa-light fa-xmark"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="menu-text">
+                        <div class="text">
+                            <h2>Меню</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="menu-navbar">
+                        <ul class="main-menu">
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:index' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Главная">Главная</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:about' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="О нас">О нас</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:portfolio' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Портфолио">Портфолио</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'blog:blog-list' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Блог">Блог</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="overflow-hidden">
+                                    <a href="{% url 'app:contacts' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Контакты">Контакты</span></a>
+                                </div>
+                            </li>
+                            <hr>
+                            {% if user.is_authenticated %}
+
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:profile' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Профиль">Профиль</span></a>
+                                    </div>
+                                </li>
+
+                            {% else %}
+
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:login' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Войти">Войти</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="overflow-hidden">
+                                        <a href="{% url 'users:register' %}" class="link cursor-pointer dmenu"><span class="fill-text" data-text="Регистрация">Регистрация</span></a>
+                                    </div>
+                                </li>
+
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="cont-info">
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Адрес</h6>
+                            <h5>Казахстан, <br> г.Алматы | г.Астана</h5>
+                        </div>
+                        <div class="item mb-50">
+                            <h6 class="sub-title mb-15">Социальные сети</h6>
+                            <ul class="social">
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
+                                </li>
+                                <li class="mb-10">
+                                    <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item mb-40">
+                            <h6 class="sub-title mb-15">Связаться с нами</h6>
+                            <h5><a href="#">info@workbench.kz</a></h5>
+                            <h5 class="underline mt-10"><a href="tel:+704-555-0127">+7 (707) 777 2817</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== End Navbar ==================== -->
+
+    <div class="has-smooth" id="has_smooth"></div>
+    
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <div class="body-wrapper">
+                <!-- Start Header area -->
+                {% include 'components/header.html' %}
+                <!-- end Header area -->
+                <main>
+                    <!-- breadcrumb area start -->
+                    <div class="zq_breadcrumb-area">
+                        <div class="zq_breadcrumb-wrap">
+                            <img src="{% static 'images/breadcrumb.png' %}" alt="" class="zq_breadcrumb-img">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="zq_breadcrumb-content text-center">
+                                            <h2 class="zq_breadcrumb-content-title">О нас</h2>
+                                            <div class="zq_breadcrumb-content-list">
+                                                <a href="{% url 'app:index' %}">Главная</a>
+                                                <span>О нас</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- breadcrumb area start -->
+
+                    <!-- about area start -->
+                    <section class="zq_inner_about-area pt-95 pb-100">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="zq_inner_about-img mr-40 mb-40 mb-lg-0">
+                                        <img src="{% static 'images/inner_about.png' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="zq_inner_about-content ml-45 mr-80">
+                                        <div class="zq_section-area">
+                                            <span class="zq_section-subtitle mb-20">Кто мы?</span>
+                                            <h2 class="zq_section-title mb-30">Мы — IT-компания.</h2>
+                                            <p class="zq_section-text mb-15">Мы — IT-компания, специализирующаяся на разработке программного обеспечения, веб-решений и мобильных приложений. Наша миссия — делать сложные задачи простыми, предоставляя клиентам инструменты для достижения их целей.</p>
+                                            <p class="zq_section-text mb-40">С момента нашего основания мы прошли путь от небольшого стартапа до лидера отрасли. Сегодня наши продукты используются компаниями по всему миру, от малого бизнеса до крупных корпораций.</p>
+                                        </div>
+                                        <div class="zq_inner_about-btn">
+                                            <a href="tel: +7(707)7772817" class="zq_theme-btn">Связаться</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- about area end -->
+
+                    <!-- service area start -->
+                    <section class="zq_inner_service-area">
+                        <div class="zq_common_width-3">
+                            <div class="zq_common_width-3_inner pt-95 pb-70">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-6 col-lg-7 col-md-9">
+                                            <div class="zq_section-area text-center">
+                                                <span class="zq_section-subtitle mb-20">Ключевые ценности</span>
+                                                <h2 class="zq_section-title mb-40">Три правила нашей команды.</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6">
+                                            <div class="zq_inner_service-item mb-30">
+                                                <div class="zq_inner_service-item-icon">
+                                                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_289_1481)">
+                                                        <path d="M10.1677 20.5601C8.43898 19.8603 6.79254 19.2018 5.1461 18.5226C3.19096 17.72 2.82051 16.0529 4.28172 14.5711C5.68119 13.1511 7.10125 11.7722 8.50072 10.3522C9.17987 9.65242 9.94135 9.40545 10.9086 9.54951C12.1229 9.73474 13.3577 9.8788 14.5925 9.94054C14.9424 9.96112 15.3746 9.7759 15.6216 9.52893C16.7741 8.39701 17.906 7.26508 18.9968 6.07141C22.4131 2.2846 26.8379 0.720488 31.7567 0.205976C33.0738 0.0619129 34.4321 0.020752 35.7493 0.020752C37.8279 0.0413324 39.1245 1.235 39.001 3.27247C38.8569 5.88619 38.6511 8.54107 38.1366 11.1136C37.478 14.4271 35.8522 17.3289 33.3414 19.6751C32.0654 20.8688 30.7894 22.083 29.5957 23.3384C29.3076 23.6471 29.1224 24.2028 29.1224 24.635C29.1635 25.8287 29.4722 27.0223 29.4516 28.216C29.4311 28.9775 29.2047 29.883 28.7313 30.4387C27.3524 32.0028 25.8295 33.4434 24.3271 34.9047C23.01 36.1601 21.3018 35.7896 20.5815 34.102C19.9846 32.682 19.3878 31.2619 18.8939 29.8007C18.6263 28.9981 18.2147 28.854 17.4532 28.9981C15.6627 29.3479 13.8722 29.6155 12.0817 29.9242C9.90019 30.3152 8.74768 29.1421 9.11813 26.94C9.48858 24.8408 9.81787 22.7622 10.1677 20.5601ZM22.7218 33.4434C24.1625 31.9822 25.4384 30.6445 26.7762 29.3685C27.2701 28.8952 27.3524 28.4424 27.2701 27.825C27.0849 26.4049 26.8997 24.9643 26.7762 23.5442C26.7556 23.215 26.9408 22.7622 27.1878 22.5152C28.7725 20.9511 30.3983 19.4281 32.0036 17.8846C33.6295 16.3411 34.7614 14.4888 35.5023 12.3896C36.5313 9.44661 36.8812 6.4007 36.8195 3.29305C36.7989 2.49041 36.4284 2.1817 35.6669 2.22286C34.2263 2.30518 32.7857 2.2846 31.3656 2.46983C27.764 2.9226 24.3683 3.93104 21.6928 6.54476C19.9435 8.21178 18.3176 10.0434 16.5888 11.7722C16.3007 12.0603 15.7862 12.2867 15.3952 12.2456C13.934 12.1427 12.4727 11.9163 11.0115 11.7722C10.7028 11.7516 10.2706 11.7722 10.0648 11.9574C8.58304 13.3569 7.12183 14.8181 5.57829 16.3411C7.18357 16.9791 8.60362 17.5553 10.0237 18.1316C12.3081 19.0577 12.5962 19.6134 12.164 22.0419C11.8348 23.9147 11.5466 25.8081 11.2173 27.7632C11.5672 27.7427 11.7936 27.7427 12.02 27.7221C13.8105 27.4134 15.601 27.1252 17.3915 26.8165C19.2849 26.4872 20.0258 26.8783 20.7461 28.6482C21.3841 30.1506 22.0015 31.7147 22.7218 33.4434Z" fill="currentColor" stroke="currentColor" stroke-width="0.486667"></path>
+                                                        <path d="M11.8559 38.9999C11.5883 38.7941 11.1767 38.6294 11.0738 38.3619C10.9503 38.0326 10.9298 37.4563 11.115 37.2505C12.7203 35.5629 14.3461 33.9165 16.0543 32.3524C16.2807 32.1466 17.1245 32.2495 17.3715 32.517C17.6184 32.7846 17.6802 33.6078 17.4538 33.8548C15.9102 35.5424 14.2638 37.1271 12.6174 38.7323C12.4733 38.8352 12.1852 38.8558 11.8559 38.9999Z" fill="currentColor" stroke="currentColor" stroke-width="0.486667"></path>
+                                                        <path d="M7.01904 22.2478C6.75149 22.6594 6.60743 23.0093 6.36046 23.2768C4.94041 24.7174 3.52036 26.1375 2.07973 27.5576C1.54463 28.0926 0.968381 28.2985 0.371547 27.7428C-0.225287 27.1871 -0.0606428 26.5697 0.474449 26.0346C1.95624 24.5528 3.39688 23.0504 4.91983 21.6304C5.20796 21.3628 5.80479 21.2805 6.19582 21.3628C6.50453 21.4452 6.71033 21.9185 7.01904 22.2478Z" fill="currentColor" stroke="currentColor" stroke-width="0.486667"></path>
+                                                        <path d="M8.00647 29.7593C9.05608 29.8416 9.55001 30.8295 8.93259 31.5086C7.36848 33.1756 5.74262 34.7809 4.05502 36.345C3.82864 36.5714 2.92309 36.4891 2.73787 36.2421C2.4909 35.9128 2.42916 35.0896 2.65555 34.8221C4.1785 33.1551 5.80436 31.5909 7.40964 30.0268C7.59486 29.8416 7.90357 29.8004 8.00647 29.7593Z" fill="currentColor" stroke="currentColor" stroke-width="0.486667"></path>
+                                                        <path d="M32.8679 10.5786C32.8474 12.9865 30.8716 14.9622 28.4637 14.9416C26.0764 14.921 24.0801 12.9247 24.0801 10.5374C24.0801 8.10891 26.1175 6.09203 28.546 6.13319C30.9745 6.19493 32.8885 8.17065 32.8679 10.5786ZM30.6658 10.558C30.6864 9.34374 29.7809 8.39704 28.5666 8.37646C27.3318 8.3353 26.3234 9.30258 26.3028 10.5168C26.2822 11.7311 27.3112 12.7395 28.5255 12.7189C29.7191 12.6984 30.6452 11.7722 30.6658 10.558Z" fill="currentColor"></path>
+                                                        <path d="M23.0923 25.2112C22.8453 25.4787 22.6189 25.9109 22.3102 25.9932C21.9398 26.0756 21.4458 25.9315 21.1166 25.7257C20.8696 25.561 20.7667 25.17 20.6226 24.8613C19.2643 21.9183 17.1239 19.7574 14.1604 18.4196C13.9957 18.3167 13.7899 18.255 13.6253 18.1521C13.049 17.8228 12.7403 17.3494 13.0284 16.7114C13.3166 16.0323 13.8517 15.8882 14.5514 16.1764C16.8976 17.1436 18.9762 18.5225 20.5197 20.56C21.3841 21.6919 22.0221 22.9885 22.763 24.2233C22.8865 24.4703 22.9482 24.779 23.0923 25.2112Z" fill="currentColor" stroke="currentColor" stroke-width="0.486667"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <h4 class="zq_inner_service-item-title"><a href="#">Иновации</a></h4>
+                                                <p>Мы всегда на шаг впереди, предлагая самые современные решения.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6">
+                                            <div class="zq_inner_service-item mb-30">
+                                                <div class="zq_inner_service-item-icon">
+                                                    <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_289_1676)">
+                                                        <path d="M9.55867 18.533C9.55867 17.6333 9.55867 16.8621 9.55867 15.9624C8.14484 15.9624 6.73102 15.9624 5.31719 15.9624C2.16822 15.9624 0.754395 14.5486 0.754395 11.3996C0.754395 9.27885 0.754395 7.15811 0.754395 5.03737C0.754395 2.27399 2.29675 0.795898 4.99587 0.795898C8.91602 0.795898 12.8362 0.795898 16.7563 0.795898C19.4554 0.795898 20.9978 2.33825 20.9978 5.10164C20.9978 7.35091 20.9978 9.53591 20.9978 11.7852C20.9978 14.4843 19.4554 16.0267 16.6921 16.0267C15.214 16.0267 13.8001 16.0267 12.2578 16.0267C12.2578 16.8621 12.2578 17.6975 12.2578 18.5972C13.0932 18.5972 13.8644 18.5972 14.6356 18.5972C15.471 18.5972 15.9851 18.9828 16.0494 19.8183C16.1137 20.5895 15.5996 21.1678 14.6356 21.1678C12.1293 21.1678 9.55867 21.1678 7.05234 21.1678C6.15264 21.1678 5.57425 20.5895 5.63852 19.8183C5.70278 18.9828 6.2169 18.5972 7.05234 18.5972C7.88779 18.533 8.72323 18.533 9.55867 18.533ZM10.844 13.3918C12.9004 13.3918 14.8926 13.3918 16.9491 13.3918C18.0416 13.3918 18.4272 13.0062 18.4915 11.9137C18.4915 9.60017 18.4915 7.28664 18.4915 4.90884C18.4915 3.75208 18.1059 3.36649 16.9491 3.36649C12.9004 3.36649 8.91602 3.36649 4.93161 3.36649C3.77484 3.36649 3.32499 3.81634 3.32499 4.90884C3.32499 7.22238 3.32499 9.47165 3.32499 11.7852C3.32499 13.0062 3.77484 13.3918 4.99587 13.3918C6.92381 13.4561 8.85176 13.3918 10.844 13.3918Z" fill="currentColor"></path>
+                                                        <path d="M38.863 31.707C38.863 32.8637 38.863 34.0205 38.863 35.1773C38.7987 37.6193 37.2564 39.0974 34.8143 39.0974C33.7218 39.0974 32.6293 39.0974 31.5368 39.0974C29.4161 39.0331 27.8094 37.4265 27.8094 35.3701C27.7452 32.928 27.7452 30.5502 27.8094 28.1081C27.8094 25.9874 29.4161 24.3808 31.5368 24.3165C32.7578 24.2522 33.9788 24.2522 35.1999 24.3165C37.1278 24.3808 38.6702 25.7946 38.863 27.7225C38.9272 29.0721 38.7987 30.3574 38.863 31.707ZM30.3158 31.6427C30.3158 32.7995 30.3158 33.892 30.3158 35.0487C30.3158 36.2055 30.7013 36.5911 31.9224 36.5911C32.8863 36.5911 33.8503 36.5911 34.8143 36.5911C35.8425 36.5911 36.2924 36.1412 36.3566 35.1773C36.3566 32.8637 36.3566 30.6145 36.3566 28.3009C36.3566 27.4655 35.9068 26.9514 35.0071 26.8871C33.9146 26.8871 32.8221 26.8871 31.7296 26.8871C30.8299 26.8871 30.38 27.4012 30.38 28.2367C30.3158 29.3934 30.3158 30.4859 30.3158 31.6427Z" fill="currentColor"></path>
+                                                        <path d="M34.4288 16.7336C34.4288 17.9546 34.4288 19.1114 34.4288 20.3324C34.4288 21.2321 33.9147 21.8105 33.1435 21.8105C32.2438 21.7463 31.8582 21.1679 31.8582 20.3324C31.8582 18.2117 31.8582 16.1552 31.8582 14.0345C31.8582 11.2711 30.3801 9.79301 27.6167 9.79301C26.7813 9.79301 25.8816 9.79301 25.0461 9.79301C24.1464 9.72874 23.6323 9.27889 23.6323 8.50771C23.6323 7.73653 24.1464 7.28668 25.1104 7.28668C26.5885 7.28668 28.0666 7.22242 29.4804 7.47948C32.3723 8.05786 34.3645 10.5642 34.4288 13.5204C34.4288 14.4843 34.4288 15.6411 34.4288 16.7336Z" fill="currentColor"></path>
+                                                        <path d="M19.5198 32.9929C18.2345 32.9929 16.9492 33.0572 15.6639 32.9929C12.3864 32.8644 9.68731 30.1652 9.62305 26.8877C9.62305 26.2451 9.62305 25.5382 9.62305 24.8955C9.68731 24.1244 10.1372 23.7388 10.8441 23.7388C11.551 23.7388 12.0008 24.0601 12.1294 24.767C12.1936 25.3454 12.1936 25.988 12.1936 26.5664C12.2579 28.9442 13.736 30.4223 16.1781 30.4866C18.5559 30.5508 20.9337 30.4866 23.3757 30.4866C23.8256 30.4866 24.3397 30.4866 24.5967 30.7436C24.9181 31.065 25.2394 31.7076 25.1751 32.0932C25.0466 32.4788 24.4039 32.9929 24.0184 33.0572C22.476 33.0572 20.9979 32.9929 19.5198 32.9929Z" fill="currentColor"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <h4 class="zq_inner_service-item-title"><a href="#">Клиент на первом месте</a></h4>
+                                                <p>Ваш успех — наш успех. </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6">
+                                            <div class="zq_inner_service-item mb-30">
+                                                <div class="zq_inner_service-item-icon">
+                                                    <svg width="38" height="41" viewBox="0 0 38 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20.3962 40.8827C19.5965 40.8827 18.7968 40.8827 17.9971 40.8827C17.9971 40.6161 17.9971 40.083 17.9971 39.8164C17.9971 29.4204 17.9971 19.0244 17.9971 8.62844C17.9971 8.09531 17.9971 7.56219 17.1974 7.29562C15.598 6.49593 14.7983 4.62998 15.3315 2.76403C15.8646 1.16465 17.464 0.0983887 19.0634 0.0983887C20.9293 0.0983887 22.5287 1.43121 22.7953 3.03059C23.3284 4.89654 22.5287 6.49593 20.9293 7.29562C20.3962 7.82875 20.3962 8.09531 20.3962 8.62844C20.3962 19.0244 20.3962 29.1539 20.3962 39.5499C20.3962 40.083 20.3962 40.3496 20.3962 40.8827ZM19.0634 2.49747C18.2637 2.49747 17.464 3.29716 17.464 4.09685C17.464 4.89654 18.2637 5.42967 19.0634 5.42967C19.8631 5.42967 20.6628 4.89654 20.6628 3.83029C20.6628 3.29716 19.8631 2.49747 19.0634 2.49747Z" fill="currentColor"></path>
+                                                        <path d="M14.7988 40.883C13.9991 40.883 13.1994 40.883 12.3997 40.883C12.3997 40.6164 12.3997 40.3499 12.3997 40.0833C12.3997 34.4855 12.3997 28.8876 12.3997 23.2898C12.3997 23.0232 12.1331 22.4901 11.8666 22.2235C10.5337 20.3576 8.93435 18.7582 7.33497 17.1588C7.0684 16.8922 7.0684 16.6257 7.0684 16.3591C7.0684 15.2928 7.0684 13.96 7.0684 12.8938C7.0684 12.3606 6.80184 12.0941 6.26871 11.5609C4.66933 10.7612 3.86964 9.16186 4.40276 7.29591C4.66933 5.69653 6.00215 4.36371 7.60153 4.09714C9.46748 3.83058 10.8003 4.63027 11.6 6.22966C12.3997 8.09561 12.1331 9.96156 10.8003 11.0278L10.5337 11.2944C9.20092 11.5609 9.46748 12.6272 9.46748 13.4269C9.20092 15.2928 9.73405 16.3591 11.0669 17.6919C12.3997 18.7582 13.1994 19.8244 14.2656 20.8907C14.5322 21.1573 14.7988 21.4238 14.7988 21.6904C14.7988 28.0879 14.7988 34.2189 14.7988 40.883C14.7988 40.6164 14.7988 40.6164 14.7988 40.883ZM8.13466 9.69499C8.93435 9.69499 9.73405 8.8953 9.73405 8.09561C9.73405 7.29591 8.93435 6.49622 8.13466 6.49622C7.33497 6.49622 6.53528 7.29591 6.53528 8.09561C6.53528 8.8953 7.33497 9.69499 8.13466 9.69499Z" fill="currentColor"></path>
+                                                        <path d="M25.7272 40.8824C24.9275 40.8824 24.1278 40.8824 23.3281 40.8824C23.3281 40.6158 23.3281 40.3493 23.3281 40.0827C23.3281 34.2183 23.3281 28.0873 23.3281 22.2229C23.3281 21.6898 23.5947 21.4232 23.8613 20.8901C25.4606 19.2907 26.7935 17.9579 28.3928 16.3585C28.6594 16.0919 28.926 15.5588 28.926 15.2922C28.926 14.4926 28.926 13.4263 28.926 12.6266C28.926 12.0935 28.6594 11.8269 28.3928 11.5604C26.5269 10.7607 25.7272 8.62815 26.5269 6.49563C27.3266 4.62968 29.4591 3.56343 31.325 4.36312C32.6579 4.89625 33.7241 5.9625 33.9907 7.56189C34.2573 9.16127 33.4576 10.7607 32.1247 11.5604C31.5916 11.8269 31.325 12.0935 31.325 12.8932C31.325 13.9594 31.325 15.0257 31.325 16.3585C31.325 16.8916 31.0585 17.1582 30.7919 17.6913C29.1925 18.7576 27.8597 20.357 26.2603 21.6898C25.9938 22.2229 25.7272 22.4895 25.7272 23.0226C25.7272 28.6205 25.7272 34.2183 25.7272 39.8161C25.7272 40.0827 25.7272 40.3493 25.7272 40.8824ZM29.9922 9.6944C30.7919 9.6944 31.5916 8.89471 31.5916 8.09502C31.5916 7.29532 30.7919 6.49563 29.9922 6.7622C29.1925 6.7622 28.3928 7.56189 28.3928 8.36158C28.3928 8.89471 29.1925 9.6944 29.9922 9.6944Z" fill="currentColor"></path>
+                                                        <path d="M31.3258 40.883C30.5261 40.883 29.7265 40.883 28.9268 40.883C28.9268 39.0171 28.9268 37.1511 28.9268 35.2852C28.9268 35.0186 29.1933 34.752 29.4599 34.752C30.5261 33.6858 31.5924 32.6195 32.6587 31.5533C32.9252 31.2867 32.9252 31.0201 33.1918 30.487C33.1918 29.9539 33.1918 29.6873 33.1918 29.1542C33.1918 28.0879 33.1918 27.0217 31.859 26.222C30.2596 25.4223 29.993 23.2898 30.7927 21.6904C31.3258 20.091 32.9252 19.0247 34.7912 19.2913C36.3906 19.2913 37.9899 20.6241 38.2565 22.2235C38.5231 23.8229 37.9899 25.6888 36.3906 26.4885C35.8574 26.7551 35.5909 27.0217 35.5909 27.8214C35.5909 29.1542 35.8574 30.7536 35.3243 31.8198C34.7912 32.8861 33.7249 33.6858 32.6587 34.752C31.5924 35.5517 31.3258 36.618 31.3258 37.9508C31.3258 38.7505 31.3258 39.8168 31.3258 40.883ZM35.5909 23.2898C35.5909 22.4901 35.0577 21.6904 33.9915 21.6904C33.1918 21.6904 32.3921 22.4901 32.3921 23.2898C32.3921 24.0895 33.1918 24.8892 33.9915 24.8892C35.0577 24.6226 35.5909 24.0895 35.5909 23.2898Z" fill="currentColor"></path>
+                                                        <path d="M9.46744 40.8827C8.66775 40.8827 7.86806 40.8827 7.06836 40.8827C7.06836 39.5499 7.06836 38.2171 7.06836 36.8842C7.06836 36.3511 6.8018 35.818 6.53524 35.5514C5.46898 34.4852 4.40272 33.6855 3.60303 32.6192C3.0699 32.0861 2.80334 31.553 2.80334 31.2864C2.80334 30.2201 2.80334 28.8873 2.80334 27.8211C2.80334 27.2879 2.80334 27.0214 2.27021 26.7548C0.137695 25.6886 -0.395433 23.2895 0.670824 21.4235C1.73708 19.291 4.40272 18.7579 6.26867 19.8241C8.13462 20.8904 8.66775 23.556 7.33493 25.422C6.8018 25.9551 6.26867 26.2217 5.73554 26.7548C5.46898 27.0214 5.46898 27.2879 5.20241 27.5545C5.20241 27.5545 5.20241 27.5545 5.20241 27.8211C5.20241 28.8873 4.93585 30.2201 5.20241 31.0198C5.46898 31.8195 6.53523 32.6192 7.33493 33.4189C8.93431 34.4852 9.46744 36.0846 9.20088 37.6839C9.20088 38.4836 9.46744 39.5499 9.46744 40.8827ZM4.13616 24.6223C4.93585 24.6223 5.73554 24.0892 5.46898 23.0229C5.46898 22.2232 4.66929 21.4235 3.86959 21.6901C3.0699 21.6901 2.27021 22.4898 2.27021 23.2895C2.53677 24.0892 3.33647 24.6223 4.13616 24.6223Z" fill="currentColor"></path>
+                                                    </svg>
+                                                </div>
+                                                <h4 class="zq_inner_service-item-title"><a href="#">Качество</a></h4>
+                                                <p>Мы стремимся к совершенству во всем, что делаем.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="zq_inner_service-btn pt-20">
+                                                <a href="tel:+7(707)7772817">Связаться</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- service area end -->
+
+                    <!-- team area start -->
+                    <section class="zq_inner_team-area pt-100 pb-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="zq_section-area mb-40">
+                                        <span class="zq_section-subtitle mb-20">Наша команда</span>
+                                        <h2 class="zq_section-title mb-20">Мы строим нашу замечательную команду людей</h2>
+                                    </div>
+                                    <div class="zq_navigation justify-content-start mb-50">
+                                        <div class="inner_team-prev"><i class="fa-solid fa-angle-left"></i></div>
+                                        <div class="inner_team-next"><i class="fa-solid fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <div class="swiper inner_team-active">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="zq_inner_team-item">
+                                                    <div class="zq_inner_team-item-img">
+                                                        <img src="{% static 'images/team/erasyl.jpeg' %}" style="height: 90%;" alt="">
+                                                    </div>
+                                                    <div class="zq_inner_team-item-content">
+                                                        <h3><a href="#">Ермек Ерасыл</a></h3>
+                                                        <span>Координатор</span>
+{#                                                        <ul>#}
+{#                                                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>#}
+{#                                                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>#}
+{#                                                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>#}
+{#                                                        </ul>#}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="zq_inner_team-item">
+                                                    <div class="zq_inner_team-item-img">
+                                                        <img src="{% static 'images/team/tabik.jpeg' %}" alt="">
+                                                    </div>
+                                                    <div class="zq_inner_team-item-content">
+                                                        <h3><a href="#">Карбаев Табигат</a></h3>
+                                                        <span>Back-end Developer</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="zq_inner_team-item">
+                                                    <div class="zq_inner_team-item-img">
+                                                        <img src="{% static 'images/team/beka.jpeg' %}" alt="">
+                                                    </div>
+                                                    <div class="zq_inner_team-item-content">
+                                                        <h3><a href="#">Ахмадиев Бексултан</a></h3>
+                                                        <span>Mobile App Developer</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="zq_inner_team-item">
+                                                    <div class="zq_inner_team-item-img">
+                                                        <img src="{% static 'images/team/alish.jpeg' %}" alt="">
+                                                    </div>
+                                                    <div class="zq_inner_team-item-content">
+                                                        <h3><a href="#">Алишер</a></h3>
+                                                        <span>SEO</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- team area end -->
+
+                    <!-- testimonial area start -->
+                    <section class="zq_h5_testimonial-area">
+                        <div class="zq_common_width-3">
+                            <div class="zq_common_width-3_inner pt-95 pb-100">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-5">
+                                            <div class="zq_section-area text-center">
+                                                <span class="zq_section-subtitle mb-20">Отзывы</span>
+                                                <h2 class="zq_section-title mb-40">Наши довольные клиенты</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="zq_inner_testimonial-wrap">
+                                <div class="swiper h5_testimonial-active">
+                                    <div class="swiper-wrapper roll-slider">
+                                        <div class="swiper-slide">
+                                            <div class="zq_h2_testimonial-item">
+                                                <ul class="zq_h2_testimonial-item-rating">
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                </ul>
+                                                <p>"Работа с вами была легкой и приятной. Мы получили именно то, что хотели."</p>
+                                                <div class="zq_h2_testimonial-admin">
+                                                    <img src="{% static 'images/h2_1.png' %}" alt="">
+                                                    <div class="zq_h2_testimonial-admin-info">
+                                                        <h5>Дархан Нуралин</h5>
+                                                        <span>Основатель <a href="https://bonapart.kz">Bonapart Co.</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="zq_h2_testimonial-item">
+                                                <ul class="zq_h2_testimonial-item-rating">
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                </ul>
+                                                <p>"Ваши решения помогли нам значительно улучшить наши бизнес-процессы.""</p>
+                                                <div class="zq_h2_testimonial-admin">
+                                                    <img src="{% static 'images/h5_1_1.png' %}" alt="">
+                                                    <div class="zq_h2_testimonial-admin-info">
+                                                        <h5>Журкабаева Динара</h5>
+                                                        <span>Основатель <a href="https://stransit.kz">stransit.kz</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="zq_h2_testimonial-item">
+                                                <ul class="zq_h2_testimonial-item-rating">
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                </ul>
+                                                <p>"Ваша команда — это настоящие профессионалы. Спасибо, приложение увеличило продажи."</p>
+                                                <div class="zq_h2_testimonial-admin">
+                                                    <img src="{% static 'images/h5_1_1.png' %}" alt="">
+                                                    <div class="zq_h2_testimonial-admin-info">
+                                                        <h5>Шарипова Анар</h5>
+                                                        <span>Основатель "Уход за домом".</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zq_navigation justify-content-center mt-50">
+                                        <div class="h5_testimonial-prev"><i class="fa-solid fa-angle-left"></i></div>
+                                        <div class="h5_testimonial-next"><i class="fa-solid fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- testimonial area end -->
+
+                    <!-- brand area start -->
+                    <div class="zq_brand-area pt-95 pb-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="zq_section-area mb-45 text-center">
+                                        <span class="zq_section-subtitle">С нами сотрудничают</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper h1_brand-active">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/kaspi.png' %}" style="border-radius: 7px;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/halyk.png' %}" style="border-radius: 7px;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/freedom.jpg' %}" style="border-radius: 7px; height: 100%;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/astana.png' %}" style="border-radius: 7px; height: 95%;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/amway.jpg' %}" style="border-radius: 7px; height: 95%;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="border-radius: 7px;">
+                                        <div class="zq_brand-item">
+                                            <img src="{% static 'images/epam.png'  %}" style="border-radius: 7px;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- brand area end -->
+
+                    <!-- cta area start -->
+                    <div class="zq_cta-are">
+                        <div class="container">
+                            <div class="zq_cta-wrapper">
+                                <h2 class="zq_cta-title">Получи скидку на первый заказ. <br>
+                                    Позвони нам сейчас!</h2>
+                                <div class="zq_cta-action">
+                                    <img src="{% static 'images/call.png' %}" alt="">
+                                    <div class="zq_cta-action-info">
+                                        <span>Номер телефона</span>
+                                        <a href="tel:+7 (707) 777 2817">+7 (707) 777 2817</a>
+                                    </div>
+                                </div>
+                                <div class="zq_cta-shape-1">
+                                    <svg width="320" height="135" viewBox="0 0 320 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.48873 267.853C9.84073 271.725 7.23273 269.613 154.945 319.181C158.227 320.274 161.775 320.274 165.057 319.181C304.001 271.997 308.545 273.165 314.529 267.853C316.39 266.113 317.866 264.004 318.865 261.661C319.584 259.857 319.969 257.938 320.001 255.997V63.9968C319.969 62.0555 319.584 60.1362 318.865 58.3328C317.866 55.9893 316.39 53.8803 314.529 52.1408C308.721 46.9888 305.457 48.3008 165.057 0.812773C161.775 -0.280364 158.227 -0.280364 154.945 0.812773C110.401 15.7408 12.5607 47.9968 8.67273 49.9968C7.51955 50.573 6.44427 51.2934 5.47273 52.1408C3.61112 53.883 2.1295 55.9911 1.12073 58.3328C0.407022 60.1372 0.0275118 62.0565 0.000732422 63.9968V255.997C0.0326085 257.938 0.41755 259.857 1.13673 261.661C2.14183 264.004 3.62395 266.113 5.48873 267.853ZM288.001 233.789L229.057 214.157C225.025 212.816 220.627 213.131 216.828 215.034C213.029 216.936 210.142 220.269 208.801 224.301C207.46 228.332 207.775 232.731 209.678 236.53C211.58 240.328 214.913 243.216 218.945 244.557L253.409 255.997L176.001 281.789V123.533L288.001 86.2048V233.789ZM160.001 32.8608L253.409 63.9968L160.001 95.1328L66.5927 63.9968L160.001 32.8608ZM32.0007 86.2048L144.001 123.533V281.789L66.5927 255.997L101.057 244.509C105.088 243.168 108.422 240.28 110.324 236.482C112.226 232.683 112.542 228.284 111.201 224.253C109.86 220.221 106.972 216.888 103.174 214.986C99.3749 213.083 94.976 212.768 90.9447 214.109L32.0007 233.789V86.2048Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <div class="zq_cta-shape-2">
+                                    <svg width="103" height="74" viewBox="0 0 103 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.03453 52.2535C4.77987 53.8064 3.73395 52.9594 62.9726 72.8382C64.2888 73.2766 65.7117 73.2766 67.0279 72.8382C122.75 53.9154 124.573 54.3839 126.972 52.2535C127.719 51.5559 128.311 50.7101 128.711 49.7703C129 49.047 129.154 48.2773 129.167 47.4988V-29.5012C129.154 -30.2798 129 -31.0495 128.711 -31.7727C128.311 -32.7125 127.719 -33.5584 126.972 -34.256C124.643 -36.3221 123.334 -35.796 67.0279 -54.8406C65.7117 -55.279 64.2888 -55.279 62.9726 -54.8406C45.1086 -48.8539 5.8707 -35.9179 4.31145 -35.1158C3.84898 -34.8847 3.41775 -34.5958 3.02812 -34.256C2.28154 -33.5573 1.68734 -32.7118 1.28278 -31.7727C0.996557 -31.0491 0.844358 -30.2794 0.833618 -29.5012V47.4988C0.846402 48.2773 1.00078 49.047 1.2892 49.7703C1.69229 50.7102 2.28668 51.5559 3.03453 52.2535ZM116.334 38.5924L92.6946 30.7192C91.0779 30.1814 89.3138 30.3079 87.7903 31.0708C86.2669 31.8338 85.1089 33.1706 84.5711 34.7874C84.0333 36.4041 84.1598 38.1682 84.9228 39.6917C85.6857 41.2151 87.0226 42.3731 88.6393 42.9109L102.461 47.4988L71.4169 57.8424V-5.62481L116.334 -20.5949V38.5924ZM65.0003 -41.9881L102.461 -29.5012L65.0003 -17.0144L27.5398 -29.5012L65.0003 -41.9881ZM13.667 -20.5949L58.5836 -5.62481V57.8424L27.5398 47.4988L41.3613 42.8916C42.978 42.3538 44.3149 41.1959 45.0778 39.6724C45.8407 38.149 45.9672 36.3848 45.4295 34.7681C44.8917 33.1514 43.7337 31.8145 42.2102 31.0516C40.6868 30.2887 38.9227 30.1622 37.306 30.6999L13.667 38.5924V-20.5949Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cta area end -->
+                </main>
+
+                <!-- footer area start -->
+                {% include 'components/footer.html' %}
+                <!-- footer area end -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery Js -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollSmoother.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'js/SplitText.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/chroma.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+ 
+  
+
+</body></html>

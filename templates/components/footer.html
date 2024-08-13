@@ -1,0 +1,68 @@
+{% load static %}
+
+<footer class="zq_footer-area">
+    <div class="zq_footer-top pt-205">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <div class="zq_footer-widget mr-85 mb-40">
+                        <h4 class="zq_footer-widget-title">Основное</h4>
+                        <p class="zq_footer-widget-text">Наша команда состоит из профессионалов с опытом.</p>
+                        <div class="zq_footer-widget-mail">
+                            <i class="fa-sharp fa-light fa-envelope"></i>
+                            <a href="mailto:info@workbench.kz">info@workbench.kz</a>
+                        </div>
+                        <form action="#">
+                            <input type="email" placeholder="Адрес электронной почты">
+                            <button type="submit"><i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="zq_footer-widget ml-25 mb-35">
+                        <h4 class="zq_footer-widget-title">Услуги</h4>
+                        <ul>
+                            <li><a href="#">Разработка приложений</a></li>
+                            <li><a href="#">Продвижение </a></li>
+                            <li><a href="#">Разработка дизайна</a></li>
+                            <li><a href="#">Брендирование UI/UX</a></li>
+                            <li><a href="#">Разработка платформ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 order-lg-3 order-md-4 order-3">
+                    <div class="zq_footer-widget ml-15 mb-35">
+                        <h4 class="zq_footer-widget-title">Быстрые ссылки</h4>
+                        <ul>
+                            <li><a href="{% url 'app:index' %}">Главная</a></li>
+                            <li><a href="{% url 'app:about' %}">О нас</a></li>
+                            <li><a href="{% url 'app:portfolio' %}">Портфолио</a></li>
+                            <li><a href="{% url 'blog:blog-list' %}">Блог</a><span>Новое</span></li>
+                            <li><a href="{% url 'app:contacts' %}">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zq_footer-bottom">
+        <div class="container">
+            <div class="zq_footer-bottom-wrap">
+                <div class="zq_footer-logo">
+                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="" style="width: 70px; height: 60px;"></a>
+                </div>
+                <div class="zq_footer-copyright">
+                    <p>Авторские права © 2024 <a href="{% url 'app:index' %}">WorkBench</a> Все права защищены</p>
+                </div>
+                <div class="zq_footer-social">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
