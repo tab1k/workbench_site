@@ -22,7 +22,9 @@ class BlogListView(ListView):
         context = super().get_context_data(**kwargs)
         context['popular_posts'] = Post.objects.order_by('-views')[:3]
 
-        context['categories'] = Category.objects.all()
+        # Добавляем категории с подсчетом постов
+        categories = Category.objects.annotate(post_count=Count('posts'))
+        context['categories'] = categories
         context['tags'] = Tag.objects.all()
         return context
 
@@ -39,7 +41,8 @@ class BlogDetailView(DetailView):
         # Получаем популярные посты (например, топ-5 по количеству просмотров)
         context['popular_posts'] = Post.objects.order_by('-views')[:3]
 
-        context['categories'] = Category.objects.all()
+        categories = Category.objects.annotate(post_count=Count('posts'))
+        context['categories'] = categories
         context['tags'] = Tag.objects.all()
         context['comment_count'] = self.object.comments.count()  # Количество комментариев текущего поста
 

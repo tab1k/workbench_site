@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Мы — IT-компания, специализирующаяся на разработке программного обеспечения, веб-решений и мобильных приложений. Наша миссия — делать сложные задачи простыми, предоставляя клиентам инструменты для достижения их целей.">
+  <meta name="keywords" content="IT Компания, Айти компания, IT, Разработка сайтов, Разработка мобильных приложений">
+  <meta name="author" content="WorkBench">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Workbench - Инновационные решения для вашего бизнеса.</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Подключение Bootstrap JS из CDN (если используется) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" id="contact-form-7-css" href="{% static 'game/css/styles.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="woocommerce-layout-css" href="{% static 'game/css/woocommerce-layout.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="woocommerce-smallscreen-css" href="{% static 'game/css/woocommerce-smallscreen.css' %}" type="text/css" media="only screen and (max-width: 768px)">
+  <link rel="stylesheet" id="woocommerce-general-css" href="{% static 'game/css/woocommerce.css' %}" type="text/css" media="all">
+  <style id="woocommerce-inline-inline-css" type="text/css">
+    .woocommerce form .form-row .required {
+      visibility: visible;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" id="slick-css" href="{% static 'game/css/slick.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="perfect-scrollbar-css" href="{% static 'game/css/perfect-scrollbar.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="perfect-scrollbar-wpc-css" href="{% static 'game/css/custom-theme.css' %}" type="text/css" media="all">
+
+  <link rel="stylesheet" id="iko-custom-css" href="{% static 'game/css/iko-custom.css' %}" type="text/css" media="all">
+
+  <style id="iko-custom-inline-css" type="text/css">
+    html:root {
+      --tg-primary-color: #df86aa;
+      --unit-primary-color: #df86aa;
+      --tg-theme-color2: #5729D6;
+      --tg-secondary-color: #0F101E;
+      --unit-secondary-color: #0F101E;
+      --tg-green: #010314;
+      --tg-black: #010314;
+    }
+  </style>
+
+  <link rel="stylesheet" id="xotric-fonts-css" href="{% static 'game/css/iko-fonts.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="bootstrap-css" href="{% static 'game/css/bootstrap.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-animate-css" href="{% static 'game/css/animate.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="font-awesome-free-css" href="{% static 'game/css/fontawesome-all.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-default-css" href="{% static 'game/css/default.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-core-css" href="{% static 'game/css/iko-core.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-unit-css" href="{% static 'game/css/iko-unit.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-woo-css" href="{% static 'game/css/iko-woo.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-style-css" href="{% static 'game/css/style.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="iko-responsive-css" href="{% static 'game/css/responsive.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-icons-css" href="{% static 'game/css/elementor-icons.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="{% static 'game/css/custom-frontend-lite.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="swiper-css" href="{% static 'game/css/swiper.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-post-6-css" href="{% static 'game/css/post-6.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-global-css" href="{% static 'game/css/global.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-post-144-css" href="{% static 'game/css/post-144.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-icons-shared-0-css" href="{% static 'game/css/fontawesome.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{% static 'game/css/brands.min.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" id="elementor-icons-tg-flat-icons-css" href="{% static 'game/css/flaticon.css' %}" type="text/css" media="all">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link rel="icon" href="{% static 'images/favicon.png' %}" sizes="32x32">
+  <link rel="icon" href="{% static 'images/favicon.png' %}" sizes="192x192">
+  <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
+  <style>
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-wrapper img {
+      transition: transform 0.2s;
+    }
+
+    .jump {
+      animation: jump 0.6s;
+    }
+
+    @keyframes jump {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <style>
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-content {
+      visibility: hidden;
+      width: 200px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+    }
+
+    .tooltip-container:hover .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+
+</head>
+
+<body class="home page-template page-template-elementor_header_footer page page-id-144 wp-embed-responsive theme-iko woocommerce-js no-sidebar elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-144">
+
+  <!-- main-area -->
+  <main class="main-area">
+
+    <div data-elementor-type="wp-page" data-elementor-id="144" class="elementor elementor-144">
+      <div class="elementor-element elementor-element-0c23b95 e-con-full e-flex e-con e-parent" data-id="0c23b95" data-element_type="container" data-core-v316-plus="true">
+        <div class="elementor-element elementor-element-72a2b97 elementor-widget elementor-widget-html" data-id="72a2b97" data-element_type="widget" data-widget_type="html.default">
+          <div class="elementor-widget-container">
+            <div class="hero-bg-gradient">
+            </div>
+          </div>
+        </div>
+        <div class="elementor-element elementor-element-9953db4 elementor-widget elementor-widget-html" data-id="9953db4" data-element_type="widget" data-widget_type="html.default">
+          <div class="elementor-widget-container">
+            <div class="ripple-shape">
+              <span class="ripple-1"></span>
+              <span class="ripple-2"></span>
+              <span class="ripple-3"></span>
+              <span class="ripple-4"></span>
+              <span class="ripple-5"></span>
+            </div>
+          </div>
+        </div>
+        <div class="elementor-element elementor-element-3d0811c e-flex e-con-boxed e-con e-child" data-id="3d0811c" data-element_type="container">
+
+          <div class="e-con-inner" style="height: 850px; align-items: center; justify-content: center; padding-top: 30px;">
+            <div class="elementor-element elementor-element-ce736bd e-con-full e-flex e-con e-child" data-id="ce736bd" data-element_type="container">
+              <div class="elementor-element elementor-element-ef75eed alltuchtopdown elementor-widget elementor-widget-image" data-id="ef75eed" data-element_type="widget" data-widget_type="image.default">
+                <div class="elementor-widget-container">
+                  <style>
+                    /*! elementor - v3.20.0 - 26-03-2024 */
+
+                    .elementor-widget-image {
+                      text-align: center
+                    }
+
+                    .elementor-widget-image a {
+                      display: inline-block
+                    }
+
+                    .elementor-widget-image a img[src$=".svg"] {
+                      width: 48px
+                    }
+
+                    .elementor-widget-image img {
+                      vertical-align: middle;
+                      display: inline-block
+                    }
+                  </style>
+
+                  <div class="container">
+                    <div class="image-wrapper">
+                      <div class="container text-center">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                          <h1 style="margin: 0;">TBK</h1>
+                          <div class="tooltip-container">
+                            <i class="bi bi-info-circle" style="font-size: 20px; vertical-align: middle;"></i>
+                            <div class="tooltip-content">
+                              <a href="{% url 'app:index' %}" style="color: white;">На главную</a>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="hero-description">Поменяй свои TBK койны на что-то <b>новое</b>.</p>
+                      </div>
+
+                      <h3><span id="counter">{{ coins }}</span></h3>
+
+                      <img id="rocket-image" fetchpriority="high" decoding="async" width="400" height="398" src="{% static 'game/images/roket.png' %}" class="rocket-image" alt="Rocket Image">
+
+                      <style>
+                        .rocket-image {
+                          transition: transform 0.3s ease;
+                        }
+
+                        .rocket-image.jump {
+                          transform: translateY(-20px);
+                          /* Поднимаем ракету на 20px */
+                        }
+                      </style>
+                    </div>
+                  </div>
+
+                  <audio id="click-sound" src="{% static 'game/sounds/coin.mp3' %}"></audio>
+
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      const rocketImage = document.getElementById('rocket-image');
+                      console.log('rocketImage:', rocketImage);
+                      if (rocketImage) {
+                        rocketImage.addEventListener('click', function() {
+                          incrementCounter();
+                          // Добавляем класс анимации
+                          rocketImage.classList.add('jump');
+                          // Удаляем класс после завершения анимации
+                          setTimeout(() => {
+                            rocketImage.classList.remove('jump');
+                          }, 300); // Длительность анимации в миллисекундах
+                        });
+                      }
+                    });
+
+                    function incrementCounter() {
+                      fetch('/game/complete-task/', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken')
+                          },
+                          body: JSON.stringify({})
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                          if (data.success) {
+                            document.getElementById('counter').textContent = data.coins;
+                          } else {
+                            console.error('Ошибка выполнения задания:', data.message);
+                          }
+                        })
+                        .catch(error => {
+                          console.error('Ошибка выполнения задания:', error);
+                        });
+                      var audio = document.getElementById('click-sound');
+                      audio.play().catch(function(error) {
+                        console.error('Ошибка воспроизведения звука:', error);
+                      });
+                    }
+
+                    function getCookie(name) {
+                      let cookieValue = null;
+                      if (document.cookie && document.cookie !== '') {
+                        const cookies = document.cookie.split(';');
+                        for (let i = 0; i < cookies.length; i++) {
+                          const cookie = cookies[i].trim();
+                          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                          }
+                        }
+                      }
+                      return cookieValue;
+                    }
+                  </script>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="elementor-element elementor-element-be3031f e-flex e-con-boxed e-con e-child" data-id="be3031f" data-element_type="container">
+          <div class="e-con-inner">
+            <div class="elementor-element elementor-element-b387ef4 e-con-full e-flex e-con e-child" data-id="b387ef4" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+              <div class="elementor-element elementor-element-0e0a34b elementor-widget elementor-widget-heading" data-id="0e0a34b" data-element_type="widget" data-widget_type="heading.default">
+                <div class="elementor-widget-container">
+                  <h2 class="elementor-heading-title elementor-size-default">Прогресс </h2>
+                </div>
+              </div>
+              <div class="elementor-element elementor-element-9fde14e elementor-widget elementor-widget-tg-progressbar" data-id="9fde14e" data-element_type="widget" data-widget_type="tg-progressbar.default">
+                <div class="elementor-widget-container">
+                  <div class="hero-countdown-wrap">
+                    <div class="skill-feature">
+                      <div class="progress">
+                        <div class="progress-bar" style="width: {{ normalized_coins_percent }}%;"></div>
+                      </div>
+                      <div class="progress-value-max">100 000 000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="elementor-element elementor-element-46ba6cd elementor-widget elementor-widget-banner-countdown" data-id="46ba6cd" data-element_type="widget" data-widget_type="banner-countdown.default">
+                <div class="elementor-widget-container">
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+                  <script>
+                    jQuery(document).ready(function($) {
+                      const registrationDate = '{{ registration_date|default:"" }}';
+                      if (registrationDate) {
+                        const now = moment();
+                        const registered = moment(registrationDate);
+
+                        function updateTime() {
+                          const duration = moment.duration(now.diff(registered));
+                          const days = Math.floor(duration.asDays());
+                          const hours = Math.floor(duration.asHours()) % 24;
+                          const minutes = Math.floor(duration.asMinutes()) % 60;
+                          const seconds = Math.floor(duration.asSeconds()) % 60;
+                          $('#time-count').html(`
+                                                <div class="time-count day"><span>${days}</span> Days</div>
+                                                <div class="time-count hour"><span>${hours}</span> Hours</div>
+                                                <div class="time-count min"><span>${minutes}</span> Minutes</div>
+                                                <div class="time-count sec"><span>${seconds}</span> Seconds</div>
+                                            `);
+                        }
+                        setInterval(updateTime, 1000); // Обновляем каждую секунду
+                      }
+                    });
+                  </script>
+
+                  <div class="e-con-inner">
+                    <div class="elementor-element elementor-element-13b070a e-con-full e-flex e-con e-child" data-id="13b070a" data-element_type="container">
+                      <div class="elementor-element elementor-element-1f3b63e elementor-widget elementor-widget-genix-faq" data-id="1f3b63e" data-element_type="widget" data-widget_type="genix-faq.default">
+                        <div class="elementor-widget-container">
+
+                          <div class="accordion-area accordion" id="faqAccordion">
+
+                            <div class="accordion-card active">
+                              <h2 class="accordion-header" id="headingOne-0">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-0" aria-expanded="false" aria-controls="collapseOne-0">
+                                      <span class="number">1</span> Что это за TBK монета?</button>
+                              </h2>
+
+                              <div id="collapseOne-0" class="accordion-collapse collapse" aria-labelledby="headingOne-0" data-bs-parent="#faqAccordion" style="">
+                                <div class="accordion-body">
+                                  <p>TBK монета – это виртуальная валюта компании WorkBench.</p>
+                                  <p>Каждая TBK монета открывает новые возможности и привилегии, делая ваше взаимодействие с нашим сервисом более увлекательным и полезным.</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="accordion-card ">
+                              <h2 class="accordion-header" id="headingOne-1">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-1" aria-expanded="false" aria-controls="collapseOne-1">
+                                      <span class="number">2</span>Как я могу получить TBK монеты?</button>
+                              </h2>
+                              <div id="collapseOne-1" class="accordion-collapse collapse " aria-labelledby="headingOne-1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                  <p>TBK монеты можно получить различными способами: тапая по экрану, выполняя задания, принимая участие в конкурсах или акциях. Чем активнее вы участвуете, тем больше монет вы зарабатываете!</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="accordion-card">
+                              <h2 class="accordion-header" id="headingOne-2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-2" aria-expanded="false" aria-controls="collapseOne-2">
+                                                <span class="number">3</span> Что я могу сделать с TBK монетами?</button>
+                                        </h2>
+                              <div id="collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2" data-bs-parent="#faqAccordion" style="">
+                                <div class="accordion-body">
+                                  <p>TBK монеты можно использовать для обмена на эксклюзивные бонусы (вещи от WorkBench), улучшения вашего профиля или получения дополнительных привилегий на нашем сайте.</p>
+                                  <hr style="margin-top: 5px; margin-bottom: 5px; color: white;">
+                                  <p><b>Наши разработчики работают над монетизацией ваших монет.</b></p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="accordion-card ">
+                              <h2 class="accordion-header" id="headingOne-3">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-3" aria-expanded="false" aria-controls="collapseOne-3">
+                                                <span class="number">4</span> Могу ли я передать свои TBK монеты другим пользователям?</button>
+                                        </h2>
+                              <div id="collapseOne-3" class="accordion-collapse collapse " aria-labelledby="headingOne-3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                  <p>Пока что передача TBK монет между пользователями не предусмотрена. В ближайшее время мы добавим эту функцию, а пока будь активным!.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+    <div class="comet-container">
+    <div class="comet"></div>
+    <div class="comet"></div>
+    <div class="comet"></div>
+    <!-- Добавьте больше комет, если нужно -->
+  </div>
+<style>
+    /* Контейнер для комет */
+.comet-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Чтобы кометы не мешали кликам по другим элементам */
+  z-index: -1; /* Помещаем контейнер под остальным содержимым */
+}
+
+/* Стиль для отдельных комет */
+.comet {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: fall linear infinite;
+}
+
+/* Анимация падения комет */
+@keyframes fall {
+  from {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Параметры для различных комет */
+.comet:nth-child(1) {
+  left: 10%;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+.comet:nth-child(2) {
+  left: 30%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.comet:nth-child(3) {
+  left: 50%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+/* Добавьте дополнительные стили для других комет */
+
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cometContainer = document.querySelector('.comet-container');
+
+    function createComet() {
+      const comet = document.createElement('div');
+      comet.className = 'comet';
+      comet.style.left = `${Math.random() * 100}%`;
+      comet.style.animationDuration = `${Math.random() * 5 + 5}s`; // 5-10 секунд
+      comet.style.animationDelay = `${Math.random() * 5}s`; // 0-5 секунд
+      cometContainer.appendChild(comet);
+    }
+
+    // Создаём 20 комет
+    for (let i = 0; i < 20; i++) {
+      createComet();
+    }
+  });
+</script>
+
+</body>
+
+<script type="text/javascript" src="{% static 'game/js/bootstrap.min.js' %}" id="bootstrap-bundle-js"></script>
+
+</html>

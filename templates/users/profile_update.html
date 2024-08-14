@@ -145,63 +145,117 @@
                 <!-- end Header area -->
                 <main>
                     <!-- breadcrumb area start -->
-                    <div class="zq_breadcrumb-area zq_dark_bg">
-
-                    </div>
-                    <!-- breadcrumb area start -->
-
-
-                    <section class="zq_inner_contact-area pt-100 pb-100 zq_dark_bg" style="">
-                        <div class="container">
-                            <div class="row justify-content-between">
-                                <div class="col-xxl-4 col-lg-5">
-                                    <div class="zq_inner_contact-left mb-40 mb-lg-0">
-                                        <div class="zq_section-area zq_inner_section">
-                                            <h2 class=" mb-20" style="color: white;"><span>Профиль</span></h2>
-                                            <p class="zq_section-text mb-30"></p>
-                                        </div>
-                                        <div class="zq_inner_contact-content">
-                                            <div class="zq_blog_details-content-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <div class="zq_breadcrumb-area">
+                        <div class="zq_breadcrumb-wrap">
+                            <img src="{% static 'images/breadcrumb.png' %}" alt="" class="zq_breadcrumb-img">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="zq_breadcrumb-content text-center">
+                                            <h2 class="zq_breadcrumb-content-title">Мой профиль</h2>
+                                            <div class="zq_breadcrumb-content-list">
+                                                <a href="{% url 'app:index' %}">Главная</a>
+                                                <span>Мой профиль</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-7">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- breadcrumb area start -->
+
+                    <!-- blog details start -->
+                    <section class="zq_blog_details-area pt-50 pb-60">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-lg-8">
                                     <div class="zq_inner_contact-form">
+                                        <div class="mb-5 " style="text-align: center; align-items: center;">
+                                            {% if user.photo %}
+                                                <img src="{{ user.photo.url }}" style="height: 100px; width: 100px; border-radius: 50%; border: 1px solid white;">
+                                            {% else %}
+                                                <img src="{% static 'images/icon.png' %}" style="height: 100px; width: 100px; border-radius: 50%; border: 1px solid white;">
+                                            {% endif %}
+                                        </div>
                                         <form method="post" enctype="multipart/form-data">
                                             {% csrf_token %}
                                             {{ form.as_p }}
                                             <div class="zq_blog_details-reply-item">
                                                 <button type="submit" class="btn btn-primary">Сохранить</button>
                                             </div>
+                                            <style>
+                                                input#photo-clear_id {
+                                                    display: none;
+                                                }
+                                                a {
+                                                    display: none;
+                                                }
+                                            </style>
                                         </form>
                                     </div>
                                 </div>
 
-                                <div class="mt-5" >
-                                    {% if user.is_authenticated %}
-                                        <form action="{% url 'users:logout' %}" method="post">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-danger">Выйти</button>
-                                        </form>
-                                    {% endif %}
+                                <div class="col-lg-4">
+                                    <div class="zq_blog_widget-wrap mb-40 ml-30">
+
+                                        <div class="zq_blog-widget">
+                                            <h4 class="zq_blog-widget-title">Популярные посты</h4>
+                                            {% for post in popular_posts %}
+                                                <div class="zq_blog-widget-post mb-15">
+                                                    <div class="zq_blog-widget-post-img">
+                                                        <a href="{% url 'blog:blog-detail' slug=post.slug %}">
+                                                            <img src="{{ post.image.url }}" style="border-radius: 15px;" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="zq_blog-widget-post-content">
+                                                        <h4><a href="{% url 'blog:blog-detail' slug=post.slug %}">{{ post.title }}</a></h4>
+                                                        <span><i class="fa-sharp fa-light fa-calendar"></i>{{ post.created_at|date:"M d, Y" }}</span>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="zq_blog-widget">
+                                            <h4 class="zq_blog-widget-title">Категории</h4>
+                                            <ul class="zq_blog-widget-category">
+                                                {% for category in categories %}
+                                                    <li><a href="{% url 'blog:category-list' slug=category.slug %}">{{ category.name }} <span>{{ category.post_count }}</span></a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+
+                                        <div class="zq_blog-widget">
+                                            <h4 class="zq_blog-widget-title">Popular Tags</h4>
+                                            <div class="zq_blog-widget-tag">
+                                                {% for tag in tags %}
+                                                    <a href="{% url 'blog:tag-list' slug=tag.slug %}">{{ tag.name }}</a>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zq_blog_widget-wrap mb-40 ml-30">
+                                        {% if user.is_authenticated %}
+                                            <form action="{% url 'users:logout' %}" style="text-align: center; align-items: center;" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-danger" style="width: 100%;">Выйти</button>
+                                            </form>
+                                        {% endif %}
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <!-- contact area end -->
-
+                    <!-- blog details end -->
 
                     <!-- cta area start -->
-                    <div class="zq_cta-area zq_cta_bg">
+                     <div class="zq_cta-area">
                         <div class="container">
                             <div class="zq_cta-wrapper">
-                                <h2 class="zq_cta-title">Давайте работать вместе. <br>
-                                    Позвоните нам сейчас!</h2>
+                                <h2 class="zq_cta-title">Получи скидку на первый заказ. <br>
+                                    Позвони нам сейчас!</h2>
                                 <div class="zq_cta-action">
                                     <img src="{% static 'images/call.png' %}" alt="">
                                     <div class="zq_cta-action-info">
@@ -253,3 +307,4 @@
 
 </body>
 </html>
+

@@ -37,9 +37,9 @@
           {% if user.is_authenticated %}
               {% if user.photo %}
                   <div class="zq_h2_header-action">
-                      <a href="">
+                      <a href="{% url 'users:profile' %}">
                           <img src="{{ user.photo.url }}" style="height: 37px; width: 37px; border-radius: 50%; border: white 1px solid;>
-                          <span class="zq_h5_header_icon zq_menuIcon d-lg-none"></span>
+                          <span class="></span>
                       </a>
                   </div>
               {% else %}

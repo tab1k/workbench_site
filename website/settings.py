@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "app.apps.AppConfig",
     "users.apps.UsersConfig",
     "blog.apps.BlogConfig",
-    'crispy_forms',
+    'game.apps.GameConfig',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -52,7 +53,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    'django.middleware.csrf.CsrfViewMiddleware',
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -143,4 +144,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+LOGIN_URL = '/users/login/'
+
+LOGIN_REDIRECT_URL = '/'
+
 LOGOUT_REDIRECT_URL = 'users:login'
+
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
+
+

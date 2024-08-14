@@ -7,7 +7,16 @@ from .models import *
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ['first_name', 'last_name', 'photo', 'gender', 'age', 'address', 'city']
+        fields = ['photo', 'first_name', 'last_name', 'gender', 'age', 'address', 'city']
+        labels = {
+            'photo': 'Фотография',
+            'first_name': 'Имя',
+            'last_name': 'Фамилия',
+            'gender': 'Пол',
+            'age': 'Возраст',
+            'address': 'Адрес',
+            'city': 'Город',
+        }
 
 
 class CustomAuthenticationForm(AuthenticationForm):

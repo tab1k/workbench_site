@@ -1,9 +1,12 @@
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+from django.db.models import Count
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
+
+from blog.models import Post, Category, Tag
 from .forms import *
 
 
@@ -37,3 +40,13 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['popular_posts'] = Post.objects.order_by('-views')[:3]
+
+        # Добавляем категории с подсчетом постов
+        categories = Category.objects.annotate(post_count=Count('posts'))
+        context['categories'] = categories
+        context['tags'] = Tag.objects.all()
+        return context
