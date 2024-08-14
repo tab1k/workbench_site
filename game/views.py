@@ -44,11 +44,13 @@ class CompleteTaskView(LoginRequiredMixin, View):
             return JsonResponse({'success': False, 'message': 'User not authenticated'}, status=403)
 
         try:
-            game = Game.objects.get(user=user)
-            game.add_coins(1)  # Добавляем 1 койн за каждое нажатие
-            game.save()  # Сохраняем изменения
+            game, created = Game.objects.get_or_create(user=user)
+
+            if created:
+                print(f"Created new Game record for user {user.username}")
+
+            game.add_coins(1)
             return JsonResponse({'success': True, 'coins': game.coins})
-        except Game.DoesNotExist:
-            return JsonResponse({'success': False, 'message': 'Game record not found'}, status=404)
+
         except Exception as e:
             return JsonResponse({'success': False, 'message': str(e)}, status=500)
