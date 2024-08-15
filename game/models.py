@@ -12,5 +12,5 @@ class Game(models.Model):
         self.coins += amount
         self.last_activity = timezone.now()
         self.save()
-        print(f"Added {amount} coins. New total: {self.coins}")
+
 

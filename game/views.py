@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views import View
 import json
 from django.views.decorators.csrf import csrf_exempt
+from django.db import transaction
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from .models import Game
@@ -44,13 +45,20 @@ class CompleteTaskView(LoginRequiredMixin, View):
             return JsonResponse({'success': False, 'message': 'User not authenticated'}, status=403)
 
         try:
-            game, created = Game.objects.get_or_create(user=user)
+            # Используем транзакцию для обеспечения атомарности
+            with transaction.atomic():
+                # Получаем или создаем объект Game для текущего пользователя
+                game, created = Game.objects.get_or_create(user=user)
 
-            if created:
-                print(f"Created new Game record for user {user.username}")
+                if created:
+                    print(f"Created new Game record for user {user.username}")
 
-            game.add_coins(1)
-            return JsonResponse({'success': True, 'coins': game.coins})
+                # Добавляем монеты
+                game.add_coins(1)
+
+                # Возвращаем успешный ответ с обновленным количеством монет
+                return JsonResponse({'success': True, 'coins': game.coins})
 
         except Exception as e:
+            # В случае ошибки возвращаем сообщение об ошибке
             return JsonResponse({'success': False, 'message': str(e)}, status=500)
